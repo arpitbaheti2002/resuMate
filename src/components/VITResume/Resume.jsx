@@ -2,10 +2,10 @@ import React from 'react'
 
 function Resume() {
   return (
-    <div className='a4-page resume'>
-      
+    <div>
+      <h1>VIT Resume</h1>
     </div>
   )
 }
 
-export default Resume;
+export default Resume

@@ -1,10 +1,17 @@
 import React from "react";
-import Resume from "./components/VIT_Resume/Resume";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import Resume from "./components/VITResume/Resume";
 
 function App() {
   return (
     <div className="App">
-     <Resume />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/VITResume" element={<Resume />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

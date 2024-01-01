@@ -5,12 +5,10 @@
 }
 
 body{
-  height: calc(29.7cm + 50px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  width: 100vw;
   background-color: rgb(204, 204, 204);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 
 .a4-page{
