@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import Resume from "./components/VITResume/Resume";
+import ResumeManager from "./components/VITResume/ResumeManager";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/VITResume" element={<Resume />} />
+          <Route path="/VITResume" element={<ResumeManager />} />
         </Routes>
       </BrowserRouter>
     </div>

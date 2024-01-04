@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import General from './General';
 
 function Resume() {
   return (
-    <div>
-      <h1>VIT Resume</h1>
+    <div className='resume a4-page'>
+      <General />
     </div>
   )
 }

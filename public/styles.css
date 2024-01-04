@@ -4,15 +4,12 @@
   box-sizing: border-box;
 }
 
+p{
+  margin: 0;
+}
+
 body{
   width: 100vw;
   background-color: rgb(204, 204, 204);
   font-family: 'Montserrat', sans-serif;
-  overflow-x: hidden;
-}
-
-.a4-page{
-  width: 21cm;
-  height: 29.7cm;
-  background-color: #fff;
 }
