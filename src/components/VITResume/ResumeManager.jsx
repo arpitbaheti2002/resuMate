@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IconContext } from 'react-icons';
 import { IoMdSettings } from "react-icons/io";
 import Header from '../Header/Header';
@@ -7,6 +7,8 @@ import './vitResume.css';
 import ResumeControls from './ResumeControls';
 
 function ResumeManager() {
+  const [displayPhone, togglePhone] = useState(true);
+
   const handlePrint = () => {
     window.print();
   };
@@ -15,13 +17,15 @@ function ResumeManager() {
     <div>
       <Header />
       <div className='resume-container'>
-        <Resume />
+        <Resume displayPhone={displayPhone}/>
         <button class="resume-control-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <IconContext.Provider value={{color: "#00ab41", size: "6vh"}}>
             <IoMdSettings />
           </IconContext.Provider>
         </button>
-        <ResumeControls />
+        <ResumeControls 
+          displayPhone={displayPhone} togglePhone={togglePhone}
+        />
 
       </div>
       <div className='resume-print'>

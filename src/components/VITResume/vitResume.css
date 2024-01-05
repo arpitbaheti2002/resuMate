@@ -6,10 +6,6 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-input{
-  border: 0;
-}
-
 label{
   padding-right: 2pt;
 }
@@ -67,8 +63,13 @@ label{
 }
 
 .info-container{
+  position: relative;
   font-size: 12pt;
-  align-items: end;
+  text-align: right;
+}
+
+.info-container p{
+  display: inline;
 }
 
 .info-container label{
@@ -77,8 +78,10 @@ label{
 }
 
 .info-container input{
-  height: 12pt;
+  width: 6cm;
   font-size: 12pt;
+  position: absolute;
+  right: calc(-6cm - 25px);
 }
 
 

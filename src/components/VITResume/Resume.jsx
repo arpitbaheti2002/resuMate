@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import General from './General';
 
-function Resume() {
+function Resume(props) {
+
   return (
     <div className='resume a4-page'>
-      <General />
+      <General displayPhone={props.displayPhone}/>
     </div>
   )
 }
