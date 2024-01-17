@@ -48,18 +48,26 @@ label{
 /* General Section */
 
 .general{
-  padding: 20px 20px 0px 20px;
+  position: relative;
+  padding: 20px 30px 0px 30px;
   display: flex;
   justify-content: space-between;
 }
 
 .image-container{
-  height: 150px;
+  height: 130px;
   object-fit: cover;
 }
 
 .image-container img{
-  height: 150px;
+  height: 130px;
+}
+
+.name {
+  font-size: 20pt;
+  height: 30pt;
+  font-weight: bolder;
+  border: none;
 }
 
 .info-container{
@@ -68,30 +76,13 @@ label{
   text-align: right;
 }
 
-.info-container p{
-  display: inline;
+.info-editor{
+  position: absolute;
+  right: -6.5cm;
 }
 
-.info-container label{
-  font-size: 12pt;
-  align-items: end;
-}
-
-.info-container input{
+.info-editor input{
   width: 6cm;
   font-size: 12pt;
-  position: absolute;
-  right: calc(-6cm - 25px);
 }
 
-
-@media print {
-  body * {
-    display: none;
-  }
-
-  .a4-page {
-    display: block;
-    border: 1px solid black;
-  }
-}

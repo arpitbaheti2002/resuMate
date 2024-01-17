@@ -5,6 +5,9 @@ function General(props) {
   const [RegNo, setRegNo] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [portfolio_site, setPortfolioSite] = useState('');
+  const [linkedin, setLinkedin] = useState('');
+  const [gitHub, setGitHub] = useState('');
   const [displayEditor, toggleEditor] = useState(false);
 
   const handleImageChange = (e) => {
@@ -34,48 +37,87 @@ function General(props) {
 
   return (
     <div className='general'>
-      <div className='image-container'>
-        <label htmlFor="uploadImage">
-          <img src={imageLink} alt='user' />
-        </label>
-        <input
-          type="file"
-          id="uploadImage"
-          accept="image/*"
-          onChange={handleImageChange}
-          style={{ display: 'none' }}
-        />
+      <div>
+        <div className='image-container'>
+          <label htmlFor="uploadImage">
+            <img src={imageLink} alt='user' />
+          </label>
+          <input
+            type="file"
+            id="uploadImage"
+            accept="image/*"
+            onChange={handleImageChange}
+            style={{ display: 'none' }}
+          />
+        </div>
+        <div>
+          <input 
+            className='name'
+            placeholder='Name' 
+          />
+        </div>
       </div>
       <div className='info-container' onClick={handleClick}>
         <p>Registration Number: {RegNo}</p>
-        <input
-          value={RegNo}
-          onChange={(e) => setRegNo(e.target.value)}
-          placeholder='Registration Number'
-          style={{ display: displayEditor ? "inline" : "none" }}
-        />
-        <br />
         <p>Email: {email}</p>
-        <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder='Email'
-          style={{ display: displayEditor ? "inline" : "none" }}
-        />
-        <br />
         {props.displayPhone?
-          <>
-            <p>Phone: {phone}</p>
-            <input
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              placeholder='Phone'
-              style={{ display: displayEditor ? "inline" : "none" }}
-              />
-            </>
-          :""
+          <p>Phone: {phone}</p>
+          :null
         }
+        {(portfolio_site.length) > 0 ? 
+          <p><a href={portfolio_site}>{portfolio_site}</a></p>
+          :null
+        }
+        <p><a href={linkedin}>{linkedin}</a></p>
+        <p><a href={gitHub}>{gitHub}</a></p>
       </div>
+
+      {displayEditor?
+        <div className='info-editor'>
+          <input
+            value={RegNo}
+            onChange={(e) => setRegNo(e.target.value)}
+            placeholder='Registration Number'
+          />
+          <br />
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder='Email'
+          />
+          <br />
+          {props.displayPhone?
+            <>
+              <input
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder='Phone number'
+              />
+              <br />
+            </>
+            : null
+          }
+          <input
+            value={portfolio_site}
+            onChange={(e) => setPortfolioSite(e.target.value)}
+            placeholder='Portfolio site (optional)'
+          />
+          <br />
+          <input
+            value={linkedin}
+            onChange={(e) => setLinkedin(e.target.value)}
+            placeholder='LinkedIn'
+          />
+          <br />
+          <input
+            value={gitHub}
+            onChange={(e) => setGitHub(e.target.value)}
+            placeholder='GitHub'
+          />
+          <br />
+        </div>
+        : null
+      }
     </div>
   );
 }
