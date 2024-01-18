@@ -1,7 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState} from 'react';
 
 function General(props) {
   const [imageLink, changeImg] = useState('https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg');
+  const [name, setName] = useState('');
   const [RegNo, setRegNo] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -48,11 +49,13 @@ function General(props) {
             accept="image/*"
             onChange={handleImageChange}
             style={{ display: 'none' }}
-          />
+            />
         </div>
         <div>
           <input 
             className='name'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             placeholder='Name' 
           />
         </div>

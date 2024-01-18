@@ -8,6 +8,8 @@ import ResumeControls from './ResumeControls';
 
 function ResumeManager() {
   const [displayPhone, togglePhone] = useState(true);
+  const [displayCerts, toggleCerts] = useState(true);
+  const [ColsEducation, changeColsEducation] = useState(3);
 
   const handlePrint = () => {
     window.print();
@@ -17,14 +19,20 @@ function ResumeManager() {
     <div>
       <Header />
       <div className='resume-container'>
-        <Resume displayPhone={displayPhone}/>
-        <button class="resume-control-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+        <Resume 
+          displayPhone={displayPhone} 
+          displayCerts={displayCerts}
+          colsEducation={ColsEducation}
+        />
+        <button className="resume-control-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <IconContext.Provider value={{color: "#00ab41", size: "6vh"}}>
             <IoMdSettings />
           </IconContext.Provider>
         </button>
         <ResumeControls 
           displayPhone={displayPhone} togglePhone={togglePhone}
+          displayCerts={displayCerts} toggleCerts={toggleCerts}
+          ColsEducation={ColsEducation} changeColsEducation={changeColsEducation}
         />
 
       </div>
