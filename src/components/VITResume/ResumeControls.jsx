@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ResumeControls({ 
-    displayPhone, togglePhone, displayCerts, toggleCerts, ColsEducation, changeColsEducation
+    displayPhone, togglePhone, displayCerts, toggleCerts, rowsEducation, changeRowsEducation, rowsProjects, changeRowsProjects
   }) {
 
   const handleCheckboxChange = (func, val) => {
@@ -33,10 +33,18 @@ function ResumeControls({
       <label>
         <input
           type="number"
-          value={ColsEducation}
-          onChange={(e) => changeColsEducation(e.target.value)}
+          value={rowsEducation}
+          onChange={(e) => changeRowsEducation(e.target.value)}
         />
-        Number of Columns in Education
+        Number of Rows in Education
+      </label>
+      <label>
+        <input
+          type="number"
+          value={rowsProjects}
+          onChange={(e) => changeRowsProjects(e.target.value)}
+        />
+        Number of Rows in Projects
       </label>
     </div>
   )

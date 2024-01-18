@@ -127,4 +127,35 @@ label{
   text-align: left;
   padding-left: 5px;
   border: 0.1mm solid rgb(184, 183, 183);
+  font-weight: 800;
+}
+
+[contentEditable="true"]:empty:before {
+  content: attr(placeholder);
+  color: #888;
+  white-space: pre-wrap;
+}
+
+/* project */
+.projects{
+  margin: 10px 30px 0px 30px;
+  font-size: 10pt;
+}
+
+.projects table td{
+  border: 0.1mm solid rgb(184, 183, 183);
+  text-align: center;
+  height: 0.46cm;
+}
+
+.projects .project-details{
+  text-align: left;
+  padding-left: 7px;
+  position: relative;
+}
+
+.team-project{
+  position: absolute;
+  top: 0;
+  right: 0;
 }

@@ -9,19 +9,19 @@
   padding: 10px;
   background-color: #fff;
   border-radius: 20px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .template-card:hover{
   background-color: #00ab41;
   transform: scale(1.1);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .template-card:hover .template-name{
   background-color: #00ab41;
   color: #fff;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .template-image{
@@ -39,7 +39,7 @@
   justify-content: center;
   font-weight: 800;
   background-color: #fff;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 @media (min-width: 576px) {

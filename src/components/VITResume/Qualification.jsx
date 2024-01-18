@@ -8,7 +8,7 @@ function Qualification(props) {
     <div className='qualifications'>
       <label htmlFor="technical-skills">Technical Skills:</label>
       <input id='technical-skills' value={technicalSkills} onChange={(e) => setTechnicalSkills(e.target.value)}/>
-      {props.displayCerts?
+      {props.displayCerts ?
         <div>
           <label htmlFor="certifications">Certifications:</label>
           <br />
@@ -16,7 +16,7 @@ function Qualification(props) {
         </div>
         : null
       }
-
+      {/* Education */}
       <table>
         <tr>
           <th className='bg-gray bold table-header' colSpan={4}>EDUCATION</th>
@@ -28,16 +28,17 @@ function Qualification(props) {
           <td className='bold' style={{width:"3.78cm"}}>CGPA/Percentage</td>
         </tr>
 
-        {Array.from({ length: props.colsEducation }, (_, index) => (
+        {Array.from({ length: props.rowsEducation }, (_, index) => (
           <tr key={index}>
-            <td className='bg-gray' contentEditable="true"></td>
-            <td contentEditable="true"></td>
-            <td contentEditable="true"></td>
-            <td contentEditable="true"></td>  
+            <td className='bg-gray' contentEditable="true" placeholder="PG/ UG/ XII/ X"></td>
+            <td contentEditable="true" placeholder="Month 20XX"></td>
+            <td contentEditable="true" placeholder="Institution Name, place"></td>
+            <td contentEditable="true" ></td>  
           </tr>
         ))}
       </table>
     </div>
+
   )
 }
 

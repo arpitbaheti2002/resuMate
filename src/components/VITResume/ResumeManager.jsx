@@ -9,7 +9,8 @@ import ResumeControls from './ResumeControls';
 function ResumeManager() {
   const [displayPhone, togglePhone] = useState(true);
   const [displayCerts, toggleCerts] = useState(true);
-  const [ColsEducation, changeColsEducation] = useState(3);
+  const [rowsEducation, changeRowsEducation] = useState(3);
+  const [rowsProjects, changeRowsProjects] = useState(2);
 
   const handlePrint = () => {
     window.print();
@@ -22,7 +23,8 @@ function ResumeManager() {
         <Resume 
           displayPhone={displayPhone} 
           displayCerts={displayCerts}
-          colsEducation={ColsEducation}
+          rowsEducation={rowsEducation}
+          rowsProjects={rowsProjects}
         />
         <button className="resume-control-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <IconContext.Provider value={{color: "#00ab41", size: "6vh"}}>
@@ -32,7 +34,8 @@ function ResumeManager() {
         <ResumeControls 
           displayPhone={displayPhone} togglePhone={togglePhone}
           displayCerts={displayCerts} toggleCerts={toggleCerts}
-          ColsEducation={ColsEducation} changeColsEducation={changeColsEducation}
+          rowsEducation={rowsEducation} changeRowsEducation={changeRowsEducation}
+          rowsProjects={rowsProjects} changeRowsProjects={changeRowsProjects}
         />
 
       </div>
