@@ -11,6 +11,8 @@ function ResumeManager() {
   const [displayCerts, toggleCerts] = useState(true);
   const [rowsEducation, changeRowsEducation] = useState(3);
   const [rowsProjects, changeRowsProjects] = useState(2);
+  const [rowsInternships, changeRowsInternships] = useState(1);
+  const [rowsCocurriculars, changeRowsCocurriculars] = useState(1);
 
   const handlePrint = () => {
     window.print();
@@ -25,6 +27,8 @@ function ResumeManager() {
           displayCerts={displayCerts}
           rowsEducation={rowsEducation}
           rowsProjects={rowsProjects}
+          rowsInternships={rowsInternships}
+          rowsCocurriculars={rowsCocurriculars}
         />
         <button className="resume-control-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <IconContext.Provider value={{color: "#00ab41", size: "6vh"}}>
@@ -36,6 +40,8 @@ function ResumeManager() {
           displayCerts={displayCerts} toggleCerts={toggleCerts}
           rowsEducation={rowsEducation} changeRowsEducation={changeRowsEducation}
           rowsProjects={rowsProjects} changeRowsProjects={changeRowsProjects}
+          rowsInternships={rowsInternships} changeRowsInternships={changeRowsInternships}
+          rowsCocurriculars={rowsCocurriculars} changeRowsCocurriculars={changeRowsCocurriculars}
         />
 
       </div>

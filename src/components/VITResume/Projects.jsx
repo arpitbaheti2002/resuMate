@@ -1,22 +1,20 @@
-import React, { useState } from 'react'
-import './vitResume.css'
+import React, { useState } from 'react';
 
 function Projects(props) {
-  function toggleVisibility(id) {
-    const element = document.getElementById(id);
-    if (element.style.display === 'none') {
-      element.style.display = 'block';
-    } else {
-      element.style.display = 'none';
-    }
+  // Create an array of state values, one for each project
+  const [teamProjectVisibility, setTeamProjectVisibility] = useState(Array(props.rowsProjects).fill(true));
+
+  function toggleVisibility(index) {
+    const newVisibility = [...teamProjectVisibility];
+    newVisibility[index] = !newVisibility[index];
+    setTeamProjectVisibility(newVisibility);
   }
 
   return (
     <div className='projects'>
-      {/* Projects */}
       <table>
         <tr>
-          <th className='bg-gray bold table-header' colSpan={4}>Academic Projects</th>
+          <th className='bg-gray bold table-header' colSpan={2}>ACADEMIC PROJECT</th>
         </tr>
 
         {Array.from({ length: props.rowsProjects }, (_, index) => (
@@ -26,21 +24,27 @@ function Projects(props) {
               <div className='bold' contentEditable="true" placeholder="Project Title"></div>
               <div contentEditable="true"> - Description: </div>
               <div contentEditable="true"> - Technology: </div>
-              <div id={`teamProject${index}`} style={{ display: 'block' }}>
+              <div id={`teamProject${index}`} style={{ display: teamProjectVisibility[index] ? 'block' : 'none' }}>
                 <div contentEditable="true"> - Team Project: </div>
                 <div contentEditable="true"> - Role: </div>
               </div>
               <div contentEditable="true"> - Links & Results: </div>
               
-              <button type='checkbox' className='team-project' onClick={() => toggleVisibility(`teamProject${index}`)}>Team Project</button>
+              <div className='team-project'>
+                <input
+                  type='checkbox'
+                  onChange={() => toggleVisibility(index)}
+                  checked={teamProjectVisibility[index]}
+                />
+                <label>Team Project</label>
+              </div>
               
             </td>
           </tr>
         ))}
       </table>
     </div>
-
-  )
+  );
 }
 
-export default Projects
+export default Projects;

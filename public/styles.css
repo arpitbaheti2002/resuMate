@@ -24,6 +24,7 @@ body{
 @media print {
   body {
     visibility: hidden;
+    border: 1px solid red;
   }
 
   .a4-page {
@@ -31,12 +32,15 @@ body{
     position: absolute;
     left: 0;
     top: 0;
-    border: 1px solid black;
     padding: 0;
     margin: 0;
   }
 
   .info-editor{
+    display: none;
+  }
+
+  .projects .team-project{
     display: none;
   }
 

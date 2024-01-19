@@ -156,6 +156,90 @@ label{
 
 .team-project{
   position: absolute;
-  top: 0;
-  right: 0;
+  width: 3cm;
+  top: 10px;
+  right: -4.2cm;
+  display: flex;
+  align-items: center;
+}
+
+/* Internships */
+
+.internships {
+  margin: 10px 30px 0px 30px;
+  font-size: 10pt;
+}
+
+.internships table td{
+  border: 0.1mm solid rgb(184, 183, 183);
+  text-align: center;
+  height: 0.46cm;
+}
+
+.internships .internship-details {
+  text-align: left;
+  padding-left: 7px;
+}
+
+.display-list::before {
+  content: "- ";
+}
+
+
+/* Cocurriculars */
+
+.cocurriculars {
+  margin: 10px 30px 0px 30px;
+  font-size: 10pt;
+}
+
+.cocurriculars table td{
+  border: 0.1mm solid rgb(184, 183, 183);
+  text-align: center;
+  height: 0.7cm;
+}
+
+.cocurriculars .cocurriculars-details {
+  text-align: left;
+  padding-left: 7px;
+}
+
+/* Achievements */
+
+.achievements {
+  margin: 10px 30px 0px 30px;
+  font-size: 10pt;
+}
+
+.achievements table td{
+  border: 0.1mm solid rgb(184, 183, 183);
+  text-align: center;
+  height: 0.7cm;
+}
+
+.achievements .achievements-details ul{
+  text-align: left;
+  list-style-type: square;
+  margin-bottom: 0;
+  padding-left: 25px;
+}
+
+/* Additional Info */
+
+.additional-info {
+  margin: 10px 30px 0px 30px;
+  font-size: 10pt;
+}
+
+.additional-info table td{
+  border: 0.1mm solid rgb(184, 183, 183);
+  text-align: center;
+  height: 0.7cm;
+}
+
+.additional-info .info-details ul{
+  text-align: left;
+  list-style-type: square;
+  margin-bottom: 0;
+  padding-left: 25px;
 }
