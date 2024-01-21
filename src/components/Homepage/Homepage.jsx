@@ -24,15 +24,15 @@ function Homepage(props) {
             <div className='feature-section'>
             <div className='feature-box'>
             <div className='card' onClick={()=>handleClick('/VITResume')}>
-                <div className='feature-title'>VIT<br/>Format</div>
+                <div className='feature-title'>VIT Format</div>
             </div>
             </div>
-            <div className='feature-box'>
+            {/* <div className='feature-box'>
                 <div className='feature-title'>Auto<br/>Layout</div>
             </div>
             <div className='feature-box'>
                 <div className='feature-title'>Create<br/>Now</div>
-            </div>
+            </div> */}
             </div>
             <div className='designer-info'>
                 Brought to you by SCAB.
