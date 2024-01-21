@@ -1,0 +1,188 @@
+/* homepage.css */
+.homepage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('Thumbnail Light.png') center/cover no-repeat;
+    position: absolute;
+    height: 100vh;
+    z-index: -1;
+  }
+  
+  .content-container {
+    padding-left: 5vw;
+    align-self:self-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 42px;
+    display: flex;
+  }
+  
+  .title-section {
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1vw;
+    display: flex;
+  }
+  
+  .title {
+    width: 600px;
+  }
+  
+  .blue-text {
+    color: #005BA2;
+    font-size: 6vw;
+    font-family: 'Inter';
+    font-weight: 700;
+    line-height: 7vw;
+    word-wrap: break-word;
+  }
+  
+  .black-text {
+    color: black;
+    font-size: 6vw;
+    font-family: 'Inter';
+    font-weight: 700;
+    line-height: 7vw;
+    word-wrap: break-word;
+  }
+  
+  .subtitle {
+    align-self:flex-start ;
+    color: #454545;
+    font-size: 2.5vw;
+    font-family: 'Inter';
+    font-weight: 400;
+    line-height: 3vw;
+    word-wrap: break-word;
+  }
+  
+  .feature-section {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4vw;
+    display: flex;
+  }
+  
+  .feature-box {
+    width:fit-content;
+    padding: 2vw;
+    background: white;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.04) inset;
+    border-radius: 2vw;
+    border: 2px #005BA2 solid;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    display: flex;
+  }
+  
+  .feature-title {
+    align-self: stretch;
+    color: #005BA2;
+    font-size: 2.5vw;
+    font-family: 'Inter';
+    font-weight: 600;
+    line-height: 3vw;
+    word-wrap: break-word;
+  }
+
+  .card{
+    border-color: transparent;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .card:hover{
+    background-color: transparent;
+    border-width: 0.5vw;
+    border-color: transparent;
+    transform: scale(1.1);
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    
+  }
+
+  .card:hover .feature-title {
+    font-weight: 700;
+  }
+  
+  .designer-info {
+    text-align: center;
+    color: black;
+    font-size: 2vw;
+    font-family: 'Inter';
+    font-weight: 600;
+    line-height: 2.5vw;
+    word-wrap: break-word;
+  }
+ 
+  @media (max-width: 600px) {
+    .homepage {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url('Thumbnail Light.png') center/cover no-repeat;
+        position: fixed;
+        height: 100vh;
+        z-index: -1;
+    }
+
+    .content-container {
+        padding-left: 5vw;
+        padding-top: 0px;
+        align-self:self-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 60px;
+        display: flex;
+    }
+    
+    .blue-text {
+        font-size: 12vw;
+        line-height: 14vw;
+      }
+      
+      .black-text {
+        font-size: 12vw;
+        line-height: 14vw;
+    }
+    
+    .subtitle {
+      font-size: 5.5vw;
+      line-height: 7vw;
+    }
+  
+    .feature-section {
+      gap: 3vw;
+    }
+  
+    .feature-box {
+      width: fit-content;
+      padding: 4vw;
+      border-radius: 4vw;
+      border: 0.4vw #005BA2 solid;
+      gap: 2vw;
+    }
+  
+    .feature-title {
+      font-size: 6vw;
+      line-height: 7vw;
+    }
+  
+    .designer-info {
+      text-align:left ;
+      max-width: 30vw;  
+      font-size: 4vw;
+      line-height: 6vw;
+      word-wrap: break-word;
+    }
+  }

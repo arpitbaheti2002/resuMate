@@ -8,12 +8,12 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
+      <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/VITResume" element={<ResumeManager />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </div>   
   );
 }
 

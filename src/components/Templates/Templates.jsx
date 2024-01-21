@@ -9,7 +9,10 @@ function Templates() {
     <div className='templates'>
       <TemplateCard name="VIT Format" image_link={VIT_Reusme} link={'/VITResume'}/>
     </div>
+    
   )
 }
+
+
 
 export default Templates;
