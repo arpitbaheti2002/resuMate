@@ -5,10 +5,9 @@ import { useNavigate } from 'react-router-dom';
 
 function Homepage(props) {
     const navigate = useNavigate();
-
-    const handleClick = () => {
+    const handleClick = (link) => {
         console.log("clicked!");
-        navigate(props.link);
+        navigate(link);
     };
     return (
         <div className='homepage'>
@@ -24,7 +23,7 @@ function Homepage(props) {
             </div>
             <div className='feature-section'>
             <div className='feature-box'>
-            <div className='card' onClick={handleClick}>
+            <div className='card' onClick={()=>handleClick('/VITResume')}>
                 <div className='feature-title'>VIT<br/>Format</div>
             </div>
             </div>
