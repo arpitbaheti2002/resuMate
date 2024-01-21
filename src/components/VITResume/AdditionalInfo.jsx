@@ -17,7 +17,7 @@ function AdditionalInfo(props) {
         </tr>
         <tr>
           <td className='bg-gray' style={{width:"2.8cm"}}>Languages</td>
-          <td className='info-details' style={{ width: "16.3cm" }}>
+          <td className='info-details' style={{ width: "16.73cm" }}>
             <ul contentEditable="true">
               <li>Enter known languages</li>
             </ul>

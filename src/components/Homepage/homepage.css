@@ -9,6 +9,7 @@
     position: absolute;
     height: 100vh;
     z-index: -1;
+    user-select: none;
   }
   
   .content-container {
@@ -81,6 +82,7 @@
     align-items: flex-start;
     gap: 16px;
     display: flex;
+    transition: all 0.1s ease-in-out;
   }
   
   .feature-title {
@@ -91,33 +93,28 @@
     font-weight: 600;
     line-height: 3.5vw;
     word-wrap: break-word;
+    transition: all 0.2s ease-in-out;
   }
 
   .card{
     border-color: transparent;
-    transition: all 0.1s ease-in-out;
   }
   
-  .card:hover{
+  .feature-box:hover{
     background-color: transparent;
     border-width: 0.5vw;
-    border-color: transparent;
-    transform: scale(1.1);
-    transition: all 0.1s ease-in-out;
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
-    
-  }
-
-  .card:hover .feature-title {
     font-weight: 700;
   }
-  
+
   .designer-info {
     text-align: center;
     color: black;
-    font-size: 2vw;
+    font-size: 1.6vw;
     font-family: 'Inter';
-    font-weight: 600;
+    font-weight: 400;
     line-height: 2.5vw;
     word-wrap: break-word;
   }

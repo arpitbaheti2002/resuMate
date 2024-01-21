@@ -23,9 +23,9 @@ function Qualification(props) {
         </tr>
         <tr>
           <td className='bg-gray bold' style={{width:"2.8cm"}}>Board</td>
-          <td className='bold' style={{width:"4.2cm"}}>Tenure</td>
-          <td className='bold' style={{width:"8.35cm"}}>Educational Institution</td>
-          <td className='bold' style={{width:"3.78cm"}}>CGPA/Percentage</td>
+          <td className='bold' style={{width:"4.3cm"}}>Tenure</td>
+          <td className='bold' style={{width:"8.55cm"}}>Educational Institution</td>
+          <td className='bold' style={{width:"3.88cm"}}>CGPA/Percentage</td>
         </tr>
 
         {Array.from({ length: props.rowsEducation }, (_, index) => (

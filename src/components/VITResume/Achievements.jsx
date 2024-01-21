@@ -9,7 +9,7 @@ function Achievements(props) {
         </tr>
         <tr>
           <td className='bg-gray' style={{width:"2.8cm"}}>Achievements</td>
-          <td className='achievements-details' style={{ width: "16.3cm" }}>
+          <td className='achievements-details' style={{ width: "16.73cm" }}>
             <ul contentEditable="true">
               <li>Each achievement in newline</li>
             </ul>

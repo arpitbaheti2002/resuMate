@@ -5,7 +5,6 @@ function TemplateCard(props) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    console.log("clicked!");
     navigate(props.link);
   };
 

@@ -13,7 +13,7 @@ function Cocurriculars(props) {
           {Array.from({ length: props.rowsCocurriculars }, (_, index) => (
             <tr key={index}>
               <td className='bg-gray' style={{width:"2.8cm"}} contentEditable="true" placeholder="e.g. Coding"></td>
-              <td className='cocurriculars-details' style={{width:"16.3cm"}}>
+              <td className='cocurriculars-details' style={{width:"16.73cm"}}>
                 <div contentEditable="true" placeholder="Status (seperated by comas)"></div>          
               </td>
             </tr>

@@ -2,15 +2,31 @@
   width: 100vw;
   display: flex;
   align-items: center;
-  background-color: #00ab41;
   user-select: none;
 }
 
 .title{
   color: #fff;
-  font-family: 'Courgette', cursive;
 }
 
+.header{
+  padding: 1.5vh 2.5vw;
+}
+
+.title{
+  color: #fff;
+  font-size: 3vw;
+  font-weight: 700;
+}
+
+.bl{
+  color: #005BA2;
+}
+
+.sub-title {
+  color: #005BA2;
+  font-size: 1.5vw;
+}
 
 @media (min-width: 576px) {
   /* Styles for devices with a screen width of 576px or larger */
@@ -23,7 +39,7 @@
 
 
 @media (min-width: 992px) {
-  .header{
+  /* .header{
     padding: 1.5vh 2.5vw;
   }
 
@@ -31,7 +47,7 @@
     color: #fff;
     font-size: 6vh;
     font-family: 'Courgette', cursive;
-  }
+  } */
 }
 
 

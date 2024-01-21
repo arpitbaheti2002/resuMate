@@ -21,6 +21,38 @@ body{
   font-weight: 700;
 }
 
+.check-box {
+  /* Hide the default checkbox */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  margin-right: 8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  background-color: #fff;
+}
+
+
+.check-box:before {
+  content: '\2713';
+  color: #005BA2;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.check-box:checked:before {
+  display: block; 
+}
+
+
 @media print {
   body {
     visibility: hidden;

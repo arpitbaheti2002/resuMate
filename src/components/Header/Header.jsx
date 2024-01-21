@@ -5,7 +5,14 @@ import './header.css';
 function Header(props) {
   return (
     <div className='header'>
-      <p className='title'>Resumate</p>
+      <div className='title'>
+          <span className='bl'>Resu</span>
+          <span>Mate</span>
+          {props.name?
+            <span className='sub-title'>{" < " + props.name + " > "}</span>
+            :null
+          }
+      </div>
       <nav className='navbar'>
       </nav>
     </div>

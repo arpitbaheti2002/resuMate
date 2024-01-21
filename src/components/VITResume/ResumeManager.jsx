@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IconContext } from 'react-icons';
 import { IoMdSettings } from "react-icons/io";
+import { FaPrint } from "react-icons/fa6";
 import Header from '../Header/Header';
 import Resume from './Resume';
 import './vitResume.css';
@@ -20,7 +21,7 @@ function ResumeManager() {
 
   return (
     <div>
-      <Header />
+      <Header name="VIT Format"/>
       <div className='resume-container'>
         <Resume 
           displayPhone={displayPhone} 
@@ -31,7 +32,7 @@ function ResumeManager() {
           rowsCocurriculars={rowsCocurriculars}
         />
         <button className="resume-control-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-          <IconContext.Provider value={{color: "#00ab41", size: "6vh"}}>
+          <IconContext.Provider value={{color: "#005BA2", size: "5vh"}}>
             <IoMdSettings />
           </IconContext.Provider>
         </button>
@@ -46,8 +47,15 @@ function ResumeManager() {
 
       </div>
       <div className='resume-print'>
-        <p>Make sure to change paper-size to A4</p>
-        <button onClick={handlePrint}>Print Resume</button>
+        <div>
+          <li>Make sure to change paper-size to A4</li>
+          <li>Include background-graphics</li>
+        </div>
+        <button onClick={handlePrint}>
+          <IconContext.Provider value={{color:"#fff", size:"2.5vh"}}>
+            <FaPrint />
+          </IconContext.Provider>
+          Print Resume</button>
       </div>
     </div>
   );

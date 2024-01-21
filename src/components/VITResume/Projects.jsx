@@ -20,7 +20,7 @@ function Projects(props) {
         {Array.from({ length: props.rowsProjects }, (_, index) => (
           <tr key={index}>
             <td className='bg-gray' style={{width:"2.8cm"}} contentEditable="true" placeholder="Project Domain"></td>
-            <td className='project-details' style={{width:"16.3cm"}}>
+            <td className='project-details' style={{width:"16.73cm"}}>
               <div className='bold' contentEditable="true" placeholder="Project Title"></div>
               <div contentEditable="true"> - Description: </div>
               <div contentEditable="true"> - Technology: </div>
@@ -32,6 +32,7 @@ function Projects(props) {
               
               <div className='team-project'>
                 <input
+                  className='check-box'
                   type='checkbox'
                   onChange={() => toggleVisibility(index)}
                   checked={teamProjectVisibility[index]}

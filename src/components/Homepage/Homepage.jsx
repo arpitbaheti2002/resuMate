@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 function Homepage(props) {
     const navigate = useNavigate();
     const handleClick = (link) => {
-        console.log("clicked!");
         navigate(link);
     };
     return (
