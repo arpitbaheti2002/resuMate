@@ -19,6 +19,20 @@ function ResumeManager() {
     window.print();
   };
 
+  useState(() => {
+    const handleBeforeUnload = (event) => {
+      const message = "Leaving this page will discard your changes. Are you sure, you want to reload?";
+      event.returnValue = message; // Standard for most browsers
+      return message; // For some older browsers
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
+
   return (
     <div>
       <Header name="VIT Format"/>
@@ -48,6 +62,7 @@ function ResumeManager() {
       </div>
       <div className='resume-print'>
         <div>
+          <li>Keep Your Resume limited to 1 page only</li>
           <li>Make sure to change paper-size to A4</li>
           <li>Include background-graphics</li>
         </div>
