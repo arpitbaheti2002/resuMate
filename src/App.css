@@ -1,4 +1,9 @@
 .App{
-  width:max-content;
   background-color: rgb(204, 204, 204);
+}
+
+@media (max-width: 576px) {
+  .App {
+    width: fit-content;
+  }
 }
