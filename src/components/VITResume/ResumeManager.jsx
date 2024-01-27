@@ -15,7 +15,13 @@ function ResumeManager() {
   const [rowsInternships, changeRowsInternships] = useState(1);
   const [rowsCocurriculars, changeRowsCocurriculars] = useState(1);
 
+  window.addEventListener('beforeprint', function(event) {
+    event.preventDefault();
+    handlePrint();
+});
+
   const handlePrint = () => {
+    document.body.style.zoom = "100%";
     window.print();
   };
 
@@ -35,7 +41,7 @@ function ResumeManager() {
 
   function zoomOutIfNecessary() {
     if (window.innerWidth < 576) {
-        document.body.style.zoom = "40%"; // You can adjust the zoom level as needed
+        document.body.style.zoom = "40%";
     }
 }
 
