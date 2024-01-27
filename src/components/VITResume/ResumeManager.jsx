@@ -33,6 +33,15 @@ function ResumeManager() {
     };
   }, []);
 
+  function zoomOutIfNecessary() {
+    if (window.innerWidth < 576) {
+        document.body.style.zoom = "40%"; // You can adjust the zoom level as needed
+    }
+}
+
+  // Call the function when the page loads, or whenever necessary
+  zoomOutIfNecessary();
+
   return (
     <div>
       <Header name="VIT Format"/>
