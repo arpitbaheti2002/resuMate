@@ -12,7 +12,7 @@ function Homepage(props) {
         <div className='homepage'>
         <div className='content-container'>
             <div className='title-section'>
-            <div className='title'>
+            <div className='home-page-title'>
                 <span className='blue-text'>Resu </span>
                 <span className='black-text'>Mate</span>
             </div>
