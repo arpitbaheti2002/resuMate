@@ -1,4 +1,5 @@
 .header{
+  width: 100vw;
   display: flex;
   align-items: center;
   user-select: none;
@@ -27,20 +28,8 @@
   font-size: 1.5vw;
 }
 
-@media (max-width: 576px) {
-  .header{
-    padding: 3vh 2.5vw;
-    justify-content: center;
-  }
-  
-  .title{
-    font-size: 7vh;
-    text-align: center;
-  }
-
-  .sub-title {
-    font-size: 3.8vh;
-  }
+@media (min-width: 576px) {
+  /* Styles for devices with a screen width of 576px or larger */
 }
 
 

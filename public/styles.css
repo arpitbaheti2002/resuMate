@@ -9,6 +9,7 @@ p{
 }
 
 body{
+  width: 100vw;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -51,22 +52,11 @@ body{
   display: block; 
 }
 
-@media (max-width: 576px) {
-  body{
-    width: calc(21cm + 250px);
-    height: calc(29.7cm + 300px);
-    overflow: hidden;
-    background-color: rgb(204, 204, 204);
-    padding: 8vh 0;
-  }
-}
 
 @media print {
   body {
     visibility: hidden;
     border: 1px solid red;
-    width: 21cm;
-    height: 29.7cm;
   }
 
   .a4-page {

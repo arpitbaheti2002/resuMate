@@ -135,12 +135,11 @@
     .content-container {
         padding-left: 5vw;
         padding-top: 0px;
-        padding-bottom: 25vh;
         align-self:self-start;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        gap: 35px;
+        gap: 60px;
         display: flex;
     }
     
@@ -155,9 +154,8 @@
     }
     
     .subtitle {
-      font-size: 6.3vw;
+      font-size: 5.5vw;
       line-height: 7vw;
-      width: 55vw;
     }
   
     .feature-section {

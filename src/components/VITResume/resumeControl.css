@@ -47,13 +47,3 @@
   border-color: #007bff; /* Change border color on hover/focus */
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
-
-@media (max-width: 576px) {
-  .offcanvas {
-    position: absolute;
-  }
-
-  .offcanvas-backdrop.show {
-    opacity: 0;
-  }
-}
