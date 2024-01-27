@@ -259,3 +259,12 @@ label{
   margin-bottom: 0;
   padding-left: 25px;
 }
+
+@media (max-width: 576px) {
+  .resume-container{
+    height: 200vh;
+    padding: 10vh 0;
+    position: relative;
+    width: calc(21cm + 100px);
+  }
+}
