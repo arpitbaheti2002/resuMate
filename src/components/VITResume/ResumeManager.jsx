@@ -28,8 +28,8 @@ function ResumeManager() {
   useState(() => {
     const handleBeforeUnload = (event) => {
       const message = "Leaving this page will discard your changes. Are you sure, you want to reload?";
-      event.returnValue = message; // Standard for most browsers
-      return message; // For some older browsers
+      event.returnValue = message; 
+      return message;
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);

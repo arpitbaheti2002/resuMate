@@ -42,14 +42,6 @@
   transition: all 0.1s ease-in-out;
 }
 
-@media (min-width: 576px) {
-  /* Styles for devices with a screen width of 576px or larger */
-}
-
-
-@media (min-width: 768px) {
-  /* Styles for devices with a screen width of 768px or larger */
-}
 
 
 @media (min-width: 992px) {

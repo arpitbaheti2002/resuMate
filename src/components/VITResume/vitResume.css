@@ -260,12 +260,3 @@ label{
   padding-left: 25px;
 }
 
-@media (max-width: 576px) {
-  .resume-container{
-    padding: 0px 150px 0px 100px;
-    margin: 10vh 0;
-  }
-
-  .resume {
-  }
-}

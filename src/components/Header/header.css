@@ -27,38 +27,10 @@
   font-size: 1.5vw;
 }
 
-@media (max-width: 576px) {
-  .header{
-    padding: 3vh 2.5vw;
-    padding-top: 8vh;
-    justify-content: center;
-  }
-
-  .title{
-    font-size: 7vh;
-  }
-
-  .sub-title {
-    font-size: 4vh;
-  }
-}
 
 
-@media (min-width: 768px) {
-  /* Styles for devices with a screen width of 768px or larger */
-}
+@media (max-width: 992px) {
 
-
-@media (min-width: 992px) {
-  /* .header{
-    padding: 1.5vh 2.5vw;
-  }
-
-  .title{
-    color: #fff;
-    font-size: 6vh;
-    font-family: 'Courgette', cursive;
-  } */
 }
 
 

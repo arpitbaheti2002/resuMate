@@ -52,13 +52,6 @@ body{
   display: block; 
 }
 
-@media (min-width: 576px) {
-  body {
-    width: 100vw;
-  }
-}
-
-
 @media print {
   body {
     visibility: hidden;
