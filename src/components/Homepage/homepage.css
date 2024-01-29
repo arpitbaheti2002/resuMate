@@ -126,7 +126,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background: url('Thumbnail Light.png') center/cover no-repeat;
+        background: url('Thumbnail mobile.png') center/cover no-repeat;
         position: fixed;
         height: 100vh;
         z-index: -1;
