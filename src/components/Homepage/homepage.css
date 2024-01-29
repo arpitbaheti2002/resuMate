@@ -59,7 +59,7 @@
     font-size: 2.5vw;
     font-family: 'Inter';
     font-weight: 400;
-    line-height: 3vw;
+    line-height: 3.5vw;
     word-wrap: break-word;
   }
   
@@ -126,7 +126,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background: url('Thumbnail mobile.png') center/cover no-repeat;
+        background: url('Thumbnail Light.png') center/cover no-repeat;
         position: fixed;
         height: 100vh;
         z-index: -1;

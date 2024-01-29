@@ -9,7 +9,7 @@ function MobilePage() {
           <span className='black-text'>Mate</span>
       </div>
       <br />
-      <p className='blue'>Optimal viewing experience is best enjoyed on larger screens.</p> 
+      <p className='blue'>The Optimal viewing experience is best enjoyed on larger screens.</p> 
       <br />
       <p>Please access this site using a larger display for the best experience.</p>
     </div>
