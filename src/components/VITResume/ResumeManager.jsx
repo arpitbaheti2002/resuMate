@@ -15,10 +15,12 @@ function ResumeManager() {
   const [rowsInternships, changeRowsInternships] = useState(1);
   const [rowsCocurriculars, changeRowsCocurriculars] = useState(1);
 
+  
+
   window.addEventListener('beforeprint', function(event) {
     event.preventDefault();
     handlePrint();
-});
+  });
 
   const handlePrint = () => {
     document.body.style.zoom = "100%";

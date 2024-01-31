@@ -11,7 +11,6 @@ function Homepage(props) {
     };
 
     const subtitle1 = Array.from("Elevate Your Profile Effortlessly");
-    const subtitle2 = Array.from("Edit, Download, VIT Format Ready!");
 
     const container = {
         hidden: { opacity: 0 },

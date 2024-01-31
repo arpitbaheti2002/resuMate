@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useEffect, useState} from 'react';
 
 function General(props) {
   const [imageLink, changeImg] = useState('https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg');
@@ -11,17 +11,65 @@ function General(props) {
   const [gitHub, setGitHub] = useState('');
   const [displayEditor, toggleEditor] = useState(false);
 
+  useEffect(() => {
+    const storedResume = localStorage.getItem('vitresume');
+    if (storedResume) {
+      const resumeData = JSON.parse(storedResume);
+      setName(resumeData.name || '');
+      changeImg(resumeData.profile_img || 'https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg')
+      setRegNo(resumeData.regNo || '')
+      setEmail(resumeData.email || '')
+      setPhone(resumeData.phone || '')
+      setPortfolioSite(resumeData.portfolio || '')
+      setLinkedin(resumeData.linkedin || '')
+      setGitHub(resumeData.github || '')
+    }
+  }, []);
+
+  const handleChange = (e, item) => {
+   
+    const storedResume = localStorage.getItem('vitresume');
+    let resumeData = {};
+
+    if (storedResume) {
+      resumeData = JSON.parse(storedResume);
+    }
+
+    if (item === "image") {
+      resumeData.profile_img = e.target.result;
+    } else if (item === "name") {
+      resumeData.name = e.target.value;
+    } else if (item === "regNo") {
+      resumeData.regNo = e.target.value;
+    } else if (item === "email") {
+      resumeData.email = e.target.value;
+    } else if (item === "phone") {
+      resumeData.phone= e.target.value;
+    } else if (item === "portfolio") {
+      resumeData.portfolio= e.target.value;
+    } else if (item === "linkedin") {
+      resumeData.linkedin= e.target.value;
+    } else if (item === "github") {
+      resumeData.github= e.target.value;
+    }
+
+
+    localStorage.setItem('vitresume', JSON.stringify(resumeData));
+  };
+ 
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-
+  
     if (file) {
       const reader = new FileReader();
-
+  
       reader.onload = (event) => {
         const imageDataUrl = event.target.result;
-        changeImg(imageDataUrl);
+        changeImg(imageDataUrl); 
+        handleChange(event, "image");
       };
-
+  
       reader.readAsDataURL(file);
     }
   };
@@ -55,7 +103,7 @@ function General(props) {
           <input 
             className='name'
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => {setName(e.target.value); handleChange(e, 'name');}}
             placeholder='Full Name' 
           />
         </div>
@@ -79,13 +127,13 @@ function General(props) {
         <div className='info-editor'>
           <input
             value={RegNo}
-            onChange={(e) => setRegNo(e.target.value)}
+            onChange={(e) => {setRegNo(e.target.value); handleChange(e, 'regNo')}}
             placeholder='Registration Number'
           />
           <br />
           <input
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {setEmail(e.target.value); handleChange(e, 'email')}}
             placeholder='Email'
           />
           <br />
@@ -93,7 +141,7 @@ function General(props) {
             <>
               <input
                 value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                onChange={(e) => {setPhone(e.target.value); handleChange(e, 'phone')}}
                 placeholder='Phone number'
               />
               <br />
@@ -102,19 +150,19 @@ function General(props) {
           }
           <input
             value={portfolio_site}
-            onChange={(e) => setPortfolioSite(e.target.value)}
+            onChange={(e) => {setPortfolioSite(e.target.value); handleChange(e, 'portfolio')}}
             placeholder='Portfolio site (optional)'
           />
           <br />
           <input
             value={linkedin}
-            onChange={(e) => setLinkedin(e.target.value)}
+            onChange={(e) => {setLinkedin(e.target.value); handleChange(e, 'linkedin')}}
             placeholder='LinkedIn'
           />
           <br />
           <input
             value={gitHub}
-            onChange={(e) => setGitHub(e.target.value)}
+            onChange={(e) => {setGitHub(e.target.value); handleChange(e, 'github')}}
             placeholder='GitHub'
           />
           <br />

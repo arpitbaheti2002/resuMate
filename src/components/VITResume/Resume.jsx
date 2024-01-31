@@ -8,8 +8,9 @@ import Achievements from './Achievements';
 import AdditionalInfo from './AdditionalInfo';
 
 function Resume(props) {
+
   return (
-    <div className='resume a4-page'>
+    <div id="vit-resume" className='resume a4-page'>
       <General displayPhone={props.displayPhone}/>
       <Qualification displayCerts={props.displayCerts} rowsEducation={props.rowsEducation}/>
       <Projects rowsProjects={props.rowsProjects}/>
@@ -21,4 +22,4 @@ function Resume(props) {
   )
 }
 
-export default Resume
+export default Resume;

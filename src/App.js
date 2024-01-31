@@ -18,7 +18,8 @@ function App() {
       </BrowserRouter>
       :<MobilePage />
     }
-    </div>   
+    </div> 
+    
   );
 }
 
