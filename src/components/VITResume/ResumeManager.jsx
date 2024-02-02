@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IconContext } from 'react-icons';
 import { IoMdSettings } from "react-icons/io";
 import { FaPrint } from "react-icons/fa6";
@@ -15,7 +15,20 @@ function ResumeManager() {
   const [rowsInternships, changeRowsInternships] = useState(1);
   const [rowsCocurriculars, changeRowsCocurriculars] = useState(1);
 
+  useEffect(() => {
+    const storedResume = localStorage.getItem('vitresume');
+    if (storedResume) {
+      const resumeData = JSON.parse(storedResume);
+      togglePhone(resumeData.displayPhone === undefined ? true : resumeData.displayPhone);
+      toggleCerts(resumeData.displayCerts === undefined ? true : resumeData.displayCerts);
+      changeRowsEducation(resumeData.rowsEducation || 3);
+      changeRowsProjects(resumeData.rowsProjects || 2);
+      changeRowsInternships(resumeData.rowsInternships || 1);
+      changeRowsCocurriculars(resumeData.rowsCocurriculars || 1);
   
+      document.querySelector('#certifications').innerHTML = resumeData.certifications;
+    }
+  }, []);
 
   window.addEventListener('beforeprint', function(event) {
     event.preventDefault();
