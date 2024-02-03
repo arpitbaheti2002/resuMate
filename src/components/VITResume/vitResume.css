@@ -222,22 +222,33 @@ label{
 
 /* Achievements */
 
-.achievements {
+.achievements-container {
   margin: 10px 30px 0px 30px;
   font-size: 10pt;
 }
 
-.achievements table td{
+.achievements-container table td{
   border: 0.1mm solid rgb(184, 183, 183);
   text-align: center;
   height: 0.7cm;
 }
 
-.achievements .achievements-details ul{
+.achievements-container .achievements-details ul{
   text-align: left;
   list-style-type: square;
   margin-bottom: 0;
   padding-left: 25px;
+}
+
+#achievements, #responsibilities, #extracurriculars{
+  display: list-item;
+  width: 15cm;
+  margin-left: 25px;
+  text-align: left;
+}
+
+#achievements div, #responsibilities div, #extracurriculars div{
+  display: list-item;
 }
 
 /* Additional Info */
@@ -258,5 +269,16 @@ label{
   list-style-type: square;
   margin-bottom: 0;
   padding-left: 25px;
+}
+
+#hobbies, #languages {
+  display: list-item;
+  width: 15cm;
+  margin-left: 25px;
+  text-align: left;
+}
+
+#hobbies div, #languages div{
+  display: list-item;
 }
 
