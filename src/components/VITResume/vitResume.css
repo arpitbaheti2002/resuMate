@@ -54,7 +54,22 @@ label{
   position: fixed;
   background-color: #fff;
   border-radius: 40% 0% 0% 40%;
-  top: 30vh;
+  top: 28vh;
+  right: 0;
+  border: 0;
+  outline: 0;
+}
+
+.feedback-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10vh;
+  height: 8vh;
+  position: fixed;
+  background-color: #fff;
+  border-radius: 40% 0% 0% 40%;
+  top: 40vh;
   right: 0;
   border: 0;
   outline: 0;

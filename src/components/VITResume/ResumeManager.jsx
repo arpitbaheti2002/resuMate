@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { IconContext } from 'react-icons';
 import { IoMdSettings } from "react-icons/io";
 import { FaPrint } from "react-icons/fa6";
+import { MdMessage } from "react-icons/md";
 import Header from '../Header/Header';
 import Resume from './Resume';
 import './vitResume.css';
 import ResumeControls from './ResumeControls';
+import Feedback from '../Feedback/Feedback';
 
 function ResumeManager() {
   const [displayPhone, togglePhone] = useState(true);
@@ -88,6 +90,12 @@ function ResumeManager() {
           rowsInternships={rowsInternships} changeRowsInternships={changeRowsInternships}
           rowsCocurriculars={rowsCocurriculars} changeRowsCocurriculars={changeRowsCocurriculars}
         />
+        <button className="feedback-btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <IconContext.Provider value={{color: "#005BA2", size: "5vh"}}>
+            <MdMessage />
+          </IconContext.Provider>
+        </button>
+        <Feedback />
 
       </div>
       <div className='resume-print'>

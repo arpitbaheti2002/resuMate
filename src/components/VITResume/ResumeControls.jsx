@@ -37,6 +37,11 @@ function ResumeControls({
     localStorage.setItem('vitresume', JSON.stringify(resumeData));
   }
 
+  const handleClearForm = () => {
+    localStorage.removeItem('vitresume');
+    window.location.reload();
+  };
+
   return (
     <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div className="offcanvas-header">
@@ -98,6 +103,7 @@ function ResumeControls({
           />
           Number of rows in Co-curriculars
         </label>
+        <button className="clear-button" onClick={handleClearForm}>Clear Form</button>
       </div>
     </div>
   )

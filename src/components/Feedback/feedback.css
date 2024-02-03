@@ -1,0 +1,22 @@
+.modal-header {
+  border: 0;
+  padding: 10px 20px;
+}
+
+.modal-body {
+  padding: 10px 20px;
+}
+
+.modal-body textarea {
+  width: 100%;
+}
+
+.modal-footer {
+  border: 0;
+  padding: 5px 20px;
+}
+
+.btn-send {
+  background-color: #005BA2;
+  color: #fff;
+}

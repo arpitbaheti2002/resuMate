@@ -48,3 +48,23 @@
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
+.clear-button{
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  border: 1px solid red;
+  color: red;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1vh;
+  margin-top: 5vh;
+  transition: all 0.1s ease-in-out
+}
+
+.clear-button:hover{
+  background-color: red;
+  color: #fff;
+  transition: all 0.1s ease-in-out
+}
+
