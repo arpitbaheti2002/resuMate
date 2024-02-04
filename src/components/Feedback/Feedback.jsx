@@ -3,8 +3,10 @@ import './feedback.css';
 
 function Feedback() {
   const [feedback, setFeedback] = useState('');
+  const [message, setMessage] = useState('');
+  const [color, setColor] = useState('green');
 
-  function submitFeedback(event) {
+  const submitFeedback = async (event) => {
     event.preventDefault();
     const currentDate = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
   
@@ -14,28 +16,36 @@ function Feedback() {
         date: currentDate,
         feedback: feedback
       }
-    }
-
-    fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    })
-    .then(response => {
+    };
+  
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+  
       if (response.ok) {
-        // Handle success
-        console.log('Feedback submitted successfully.');
+        setMessage('Submitted Successfully');
+        setFeedback('');
+        setColor('green');
+        setTimeout(() => {
+          setMessage('');
+        }, 5000);
       } else {
-        // Handle error
-        console.error('Error submitting feedback:', response.statusText);
+        setMessage('Error submitting feedback');
+        setColor('red');
+        setTimeout(() => {
+          setMessage('');
+        }, 5000);
       }
-    })
-    .catch(error => {
+    } catch (error) {
       console.error('Error submitting feedback:', error);
-    });
-  }
+    }
+  };
+  
 
   return (
     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -49,6 +59,7 @@ function Feedback() {
             <textarea rows={3} value={feedback} onChange={(e) => setFeedback(e.target.value)}/>
           </div>
           <div className="modal-footer">
+            <span style={{color: color}} val={message}>{message}</span>
             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" className="btn btn-send" onClick={submitFeedback}>Send</button>
           </div>
