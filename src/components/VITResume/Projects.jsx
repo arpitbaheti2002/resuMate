@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 function Projects(props) {
   // Create an array of state values, one for each project
   const [teamProjectVisibility, setTeamProjectVisibility] = useState(Array(props.rowsProjects).fill(true));
+  const [projectDeployed, setProjectDeployed] = useState(Array(props.rowsProjects).fill(true));
   const [projectData, setProjectData] = useState(Array.from({ length: props.rowsProjects }, () => ({
     domain: '',
     title: '',
@@ -10,7 +11,8 @@ function Projects(props) {
     technology: '- Technology: ',
     teamMem: '-Team Project: ',
     role: '- Role: ',
-    results: '- Links & Results: ' 
+    results: '- Results: ' ,
+    link: ''
   })));
 
   useEffect(() => {
@@ -28,7 +30,8 @@ function Projects(props) {
               technology: '- Technology: ',
               teamMem: '-Team Project: ',
               role: '- Role: ',
-              results: '- Links & Results: ' 
+              results: '- Results: ',
+              link: ''
             };
           }
         });
@@ -43,6 +46,7 @@ function Projects(props) {
       const resumeData = JSON.parse(storedResume);
       setProjectData(resumeData.projectData || projectData);
       setTeamProjectVisibility(resumeData.teamProject || teamProjectVisibility);
+      setProjectDeployed(resumeData.projectDeployed || projectDeployed);
     }
   }, []);
 
@@ -68,6 +72,19 @@ function Projects(props) {
     const updatedResumeData = {
       ...storedResume,
       teamProject: newVisibility
+    };
+    localStorage.setItem('vitresume', JSON.stringify(updatedResumeData));
+  }
+
+  function toggleLink(index) {
+    const newDeployed = [...projectDeployed];
+    newDeployed[index] = !newDeployed[index];
+    setProjectDeployed(newDeployed);
+
+    const storedResume = JSON.parse(localStorage.getItem('vitresume')) || {};
+    const updatedResumeData = {
+      ...storedResume,
+      projectDeployed: newDeployed
     };
     localStorage.setItem('vitresume', JSON.stringify(updatedResumeData));
   }
@@ -101,19 +118,38 @@ function Projects(props) {
                 </div>
               </div>
               <div contentEditable="true" onBlur={(e) => handleChangeProject(e, index, 'results')}>
-                {projectData[index] ? projectData[index]['results'] : '- Links & Results: '}
+                {projectData[index] ? projectData[index]['results'] : '- Results: '}
+              </div>
+              <div id={`projectDeployed${index}`} style={{ display: projectDeployed[index] ? 'block' : 'none' }}>
+                <div>
+                  <span>- Link: </span>
+                  <a href={projectData[index]['link']}  style={{width: "15cm", display: "inline-block"}}
+                    contentEditable="true" onBlur={(e) => handleChangeProject(e, index, 'link')}>
+                    {projectData[index]['link']}
+                  </a>
+                </div>
               </div>
               
               <div className='team-project'>
-                <input
-                  className='check-box'
-                  type='checkbox'
-                  onChange={() => toggleVisibility(index)}
-                  checked={teamProjectVisibility[index]}
-                />
-                <label>Team Project</label>
+                <div>
+                  <input
+                    className='check-box'
+                    type='checkbox'
+                    onChange={() => toggleVisibility(index)}
+                    checked={teamProjectVisibility[index]}
+                  />
+                  <label>Team Project</label>
+                </div>
+                <div>
+                  <input
+                    className='check-box'
+                    type='checkbox'
+                    onChange={() => toggleLink(index)}
+                    checked={projectDeployed[index]}
+                  />
+                  <label>Deployed</label>
+                </div>
               </div>
-              
             </td>
           </tr>
         ))}

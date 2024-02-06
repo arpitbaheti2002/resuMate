@@ -191,7 +191,7 @@ label{
   top: 10px;
   right: -4.2cm;
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
 /* Internships */
