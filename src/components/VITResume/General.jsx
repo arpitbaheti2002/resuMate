@@ -8,7 +8,9 @@ function General(props) {
   const [phone, setPhone] = useState('');
   const [portfolio_site, setPortfolioSite] = useState('');
   const [linkedin, setLinkedin] = useState('');
+  const [linkedinDisplay, setLinkedinDisplay] = useState('');
   const [gitHub, setGitHub] = useState('');
+  const [gitHubDisplay, setGitHubDisplay] = useState('');
   const [displayEditor, toggleEditor] = useState(false);
 
   useEffect(() => {
@@ -22,7 +24,9 @@ function General(props) {
       setPhone(resumeData.phone || '')
       setPortfolioSite(resumeData.portfolio || '')
       setLinkedin(resumeData.linkedin || '')
+      setLinkedinDisplay(resumeData.linkedinDisplay || '')
       setGitHub(resumeData.github || '')
+      setGitHubDisplay(resumeData.githubDisplay || '')
     }
   }, []);
 
@@ -49,8 +53,12 @@ function General(props) {
       resumeData.portfolio= e.target.value;
     } else if (item === "linkedin") {
       resumeData.linkedin= e.target.value;
+    } else if (item === "linkedinDisplay") {
+      resumeData.linkedinDisplay= e.target.value;
     } else if (item === "github") {
       resumeData.github= e.target.value;
+    } else if (item === "githubDisplay") {
+      resumeData.githubDisplay= e.target.value;
     }
 
 
@@ -110,7 +118,7 @@ function General(props) {
       </div>
       <div className='info-container' onClick={handleClick}>
         <p>Registration Number: {RegNo}</p>
-        <p>Email: {email}</p>
+        <p>Email: <a href={`mailto:${email}`}>{email}</a></p>
         {props.displayPhone?
           <p>Phone: {phone}</p>
           :null
@@ -119,8 +127,8 @@ function General(props) {
           <p><a href={portfolio_site}>{portfolio_site}</a></p>
           :null
         }
-        <p><a href={linkedin}>{linkedin}</a></p>
-        <p><a href={gitHub}>{gitHub}</a></p>
+        <p><a href={linkedin}>{linkedinDisplay}</a></p>
+        <p><a href={gitHub}>{gitHubDisplay}</a></p>
       </div>
 
       {displayEditor?
@@ -157,13 +165,25 @@ function General(props) {
           <input
             value={linkedin}
             onChange={(e) => {setLinkedin(e.target.value); handleChange(e, 'linkedin')}}
-            placeholder='LinkedIn'
+            placeholder='LinkedIn link'
+          />
+          <br />
+          <input
+            value={linkedinDisplay}
+            onChange={(e) => {setLinkedinDisplay(e.target.value); handleChange(e, 'linkedinDisplay')}}
+            placeholder='LinkedIn link name'
           />
           <br />
           <input
             value={gitHub}
             onChange={(e) => {setGitHub(e.target.value); handleChange(e, 'github')}}
-            placeholder='GitHub'
+            placeholder='GitHub link'
+          />
+          <br />
+          <input
+            value={gitHubDisplay}
+            onChange={(e) => {setGitHubDisplay(e.target.value); handleChange(e, 'githubDisplay')}}
+            placeholder='GitHub link name'
           />
           <br />
         </div>
