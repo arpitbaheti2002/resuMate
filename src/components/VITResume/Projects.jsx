@@ -38,7 +38,7 @@ function Projects(props) {
         return newProjectData;
       });
     }
-  }, [props.rowsProjects, projectData.length]);
+  }, [props.rowsProjects, projectData.length]);   
 
   useEffect(() => {
     const storedResume = localStorage.getItem('vitresume');
@@ -123,9 +123,9 @@ function Projects(props) {
               <div id={`projectDeployed${index}`} style={{ display: projectDeployed[index] ? 'block' : 'none' }}>
                 <div>
                   <span>- Link: </span>
-                  <a href={projectData[index]['link']}  style={{width: "15cm", display: "inline-block"}}
+                  <a href={projectData[index]? projectData[index]['link']:''}  style={{width: "15cm", display: "inline-block"}}
                     contentEditable="true" onBlur={(e) => handleChangeProject(e, index, 'link')}>
-                    {projectData[index]['link']}
+                    {projectData[index] ? projectData[index]['link'] : ''}
                   </a>
                 </div>
               </div>
