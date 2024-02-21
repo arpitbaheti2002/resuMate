@@ -9,7 +9,7 @@ function Projects(props) {
     title: '',
     description: '- Description: ',
     technology: '- Technology: ',
-    teamMem: '-Team Project: ',
+    teamMem: '- Team Project: ',
     role: '- Role: ',
     results: '- Results: ' ,
     link: ''
@@ -28,7 +28,7 @@ function Projects(props) {
               title: '',
               description: '- Description: ',
               technology: '- Technology: ',
-              teamMem: '-Team Project: ',
+              teamMem: '- Team Project: ',
               role: '- Role: ',
               results: '- Results: ',
               link: ''
@@ -123,7 +123,7 @@ function Projects(props) {
               <div id={`projectDeployed${index}`} style={{ display: projectDeployed[index] ? 'block' : 'none' }}>
                 <div>
                   <span>- Link: </span>
-                  <a href={projectData[index]? projectData[index]['link']:''}  style={{width: "15cm", display: "inline-block"}}
+                  <a href={projectData[index]? projectData[index]['link']:''}  style={{width: "14cm", display: "inline-block"}}
                     contentEditable="true" onBlur={(e) => handleChangeProject(e, index, 'link')}>
                     {projectData[index] ? projectData[index]['link'] : ''}
                   </a>
