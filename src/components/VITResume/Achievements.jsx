@@ -29,33 +29,41 @@ function Achievements(props) {
 
     localStorage.setItem('vitresume', JSON.stringify(resumeData));
   };
-
+  
   return (
+    (props.displayAchievements || props.displayResponsibilities || props.displayExtracurriculars)?
     <div className='achievements-container'>
       <table>
         <tr>
           <th className='bg-gray bold table-header' colSpan={2}>EXTRA-CURRICULARS AND ACHIEVEMENTS</th>
         </tr>
+        {props.displayAchievements?
         <tr>
           <td className='bg-gray' style={{width:"2.8cm"}}>Achievements</td>
           <td className='achievements-details' style={{ width: "16.73cm" }}>
             <div id='achievements' contentEditable="true" onBlur={(e) => {handleChange(e, 'achievements')}}></div>
           </td>
         </tr>
+        :<></>}
+        {props.displayResponsibilities?
         <tr>
           <td className='bg-gray' style={{width:"2.8cm"}}>Responsibilities</td>
           <td className='achievements-details' style={{ width: "16.73cm" }}>
             <div id='responsibilities' contentEditable="true" onBlur={(e) => {handleChange(e, 'responsibilities')}}></div>
           </td>
         </tr>
+        : <></>}
+        {props.displayExtracurriculars?
         <tr>
           <td className='bg-gray' style={{width:"2.8cm"}}>Extracurriculars</td>
           <td className='achievements-details' style={{ width: "16.73cm" }}>
             <div id='extracurriculars' contentEditable="true" onBlur={(e) => {handleChange(e, 'extracurriculars')}}></div>
           </td>
         </tr>
+        :<></>}
       </table>
     </div>
+    :<></>
 
   )
 }

@@ -1,17 +1,15 @@
 import React from 'react';
 import Homepage from './Homepage/Homepage';
-function Dashboard() {
-  document.body.style.zoom = "100%";
+import ErrorBoundary from './ErrorBoundry';
 
+function Dashboard() {
   return (
     <div>
-      <Homepage />
-      
-      {/* <Header />
-      <Templates />
-      <Footer /> */}
+      <ErrorBoundary>
+        <Homepage />
+      </ErrorBoundary>
     </div>
-  )
+  );
 }
 
 export default Dashboard

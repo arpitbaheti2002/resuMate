@@ -16,6 +16,9 @@ function ResumeManager() {
   const [rowsProjects, changeRowsProjects] = useState(2);
   const [rowsInternships, changeRowsInternships] = useState(1);
   const [rowsCocurriculars, changeRowsCocurriculars] = useState(1);
+  const [displayAchievements, toggleAchievements] = useState(true);
+  const [displayResponsibilities, toggleResponsibilities] = useState(true);
+  const [displayExtracurriculars, toggleExtracurriculars] = useState(true);
 
   useEffect(() => {
     const storedResume = localStorage.getItem('vitresume');
@@ -27,6 +30,9 @@ function ResumeManager() {
       changeRowsProjects(resumeData.rowsProjects || 2);
       changeRowsInternships(resumeData.rowsInternships || 1);
       changeRowsCocurriculars(resumeData.rowsCocurriculars || 1);
+      toggleAchievements(resumeData.displayAchievements === undefined ? true : resumeData.displayAchievements)
+      toggleResponsibilities(resumeData.displayResponsibilities === undefined ? true : resumeData.displayResponsibilities)
+      toggleExtracurriculars(resumeData.displayExtracurriculars === undefined ? true : resumeData.displayExtracurriculars)
   
       document.querySelector('#certifications').innerHTML = resumeData.certifications;
     }
@@ -56,14 +62,6 @@ function ResumeManager() {
     };
   }, []);
 
-  function zoomOutIfNecessary() {
-    if (window.innerWidth < 576) {
-        document.body.style.zoom = "40%";
-    }
-}
-
-  // Call the function when the page loads, or whenever necessary
-  zoomOutIfNecessary();
 
   return (
     <div>
@@ -76,7 +74,10 @@ function ResumeManager() {
           rowsProjects={rowsProjects}
           rowsInternships={rowsInternships}
           rowsCocurriculars={rowsCocurriculars}
-        />
+          displayAchievements={displayAchievements}
+          displayResponsibilities={displayResponsibilities}
+          displayExtracurriculars={displayExtracurriculars}
+          />
         <button className="resume-control-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <IconContext.Provider value={{color: "#005BA2", size: "5vh"}}>
             <IoMdSettings />
@@ -89,6 +90,9 @@ function ResumeManager() {
           rowsProjects={rowsProjects} changeRowsProjects={changeRowsProjects}
           rowsInternships={rowsInternships} changeRowsInternships={changeRowsInternships}
           rowsCocurriculars={rowsCocurriculars} changeRowsCocurriculars={changeRowsCocurriculars}
+          displayAchievements={displayAchievements} toggleAchievements={toggleAchievements}
+          displayResponsibilities={displayResponsibilities} toggleResponsibilities={toggleResponsibilities}
+          displayExtracurriculars={displayExtracurriculars} toggleExtracurriculars={toggleExtracurriculars}
         />
         <button className="feedback-btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <IconContext.Provider value={{color: "#005BA2", size: "5vh"}}>

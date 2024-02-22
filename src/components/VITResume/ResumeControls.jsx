@@ -3,7 +3,8 @@ import './resumeControl.css';
 
 function ResumeControls({ 
     displayPhone, togglePhone, displayCerts, toggleCerts, rowsEducation, changeRowsEducation, rowsProjects, changeRowsProjects,
-    rowsInternships, changeRowsInternships, rowsCocurriculars, changeRowsCocurriculars
+    rowsInternships, changeRowsInternships, rowsCocurriculars, changeRowsCocurriculars, displayAchievements, toggleAchievements,
+    displayResponsibilities, toggleResponsibilities, displayExtracurriculars, toggleExtracurriculars
   }) {
 
   const handleCheckboxChange = (func, val) => {
@@ -20,10 +21,8 @@ function ResumeControls({
 
     if (item === "displayPhone") {
       resumeData.displayPhone = !val;
-
     } else if (item === "displayCerts") {
       resumeData.displayCerts = !val;
-
     } else if (item === "rowsEducation") {
       resumeData.rowsEducation = val;
     } else if (item === "rowsProjects") {
@@ -32,6 +31,12 @@ function ResumeControls({
       resumeData.rowsInternships = val;
     } else if (item === "rowsCocurriculars") {
       resumeData.rowsCocurriculars = val;
+    } else if (item === "displayAchievements") {
+      resumeData.displayAchievements = !val;
+    } else if (item === "displayResponsibilities") {
+      resumeData.displayResponsibilities = !val;
+    } else if (item === "displayExtracurriculars") {
+      resumeData.displayExtracurriculars = !val;
     }
 
     localStorage.setItem('vitresume', JSON.stringify(resumeData));
@@ -102,6 +107,34 @@ function ResumeControls({
             onChange={(e) => {changeRowsCocurriculars(e.target.value); handleChange(e, 'rowsCocurriculars', e.target.value)}}
           />
           Number of rows in Co-curriculars
+        </label>
+        <p>Achievements</p>
+        <label>
+          <input
+            className='check-box'
+            type="checkbox"
+            checked={displayAchievements}
+            onChange={(e) => {handleCheckboxChange(toggleAchievements, displayAchievements); handleChange(e, 'displayAchievements', displayAchievements)}}
+          />
+          Display Achievements
+        </label>
+        <label>
+          <input
+            className='check-box'
+            type="checkbox"
+            checked={displayResponsibilities}
+            onChange={(e) => {handleCheckboxChange(toggleResponsibilities, displayResponsibilities); handleChange(e, 'displayResponsibilities', displayResponsibilities)}}
+          />
+          Display Responsibilities
+        </label>
+        <label>
+          <input
+            className='check-box'
+            type="checkbox"
+            checked={displayExtracurriculars}
+            onChange={(e) => {handleCheckboxChange(toggleExtracurriculars, displayExtracurriculars); handleChange(e, 'displayExtracurriculars', displayExtracurriculars)}}
+          />
+          Display Extracurriculars
         </label>
         <button className="clear-button" onClick={handleClearForm}>Clear Form</button>
       </div>
