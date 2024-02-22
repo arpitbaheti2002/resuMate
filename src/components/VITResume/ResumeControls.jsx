@@ -4,7 +4,8 @@ import './resumeControl.css';
 function ResumeControls({ 
     displayPhone, togglePhone, displayCerts, toggleCerts, rowsEducation, changeRowsEducation, rowsProjects, changeRowsProjects,
     rowsInternships, changeRowsInternships, rowsCocurriculars, changeRowsCocurriculars, displayAchievements, toggleAchievements,
-    displayResponsibilities, toggleResponsibilities, displayExtracurriculars, toggleExtracurriculars
+    displayResponsibilities, toggleResponsibilities, displayExtracurriculars, toggleExtracurriculars, displayHobbies, 
+    toggleHobbies, displayLanguages, toggleLanguages
   }) {
 
   const handleCheckboxChange = (func, val) => {
@@ -37,6 +38,10 @@ function ResumeControls({
       resumeData.displayResponsibilities = !val;
     } else if (item === "displayExtracurriculars") {
       resumeData.displayExtracurriculars = !val;
+    } else if (item === "displayHobbies") {
+      resumeData.displayHobbies = !val;
+    } else if (item === "displayLanguages") {
+      resumeData.displayLanguages = !val;
     }
 
     localStorage.setItem('vitresume', JSON.stringify(resumeData));
@@ -108,7 +113,7 @@ function ResumeControls({
           />
           Number of rows in Co-curriculars
         </label>
-        <p>Achievements</p>
+        <h5 className="offcanvas-title offcanvas-sub-title" id="offcanvasRightLabel">Achievements</h5>
         <label>
           <input
             className='check-box'
@@ -135,6 +140,26 @@ function ResumeControls({
             onChange={(e) => {handleCheckboxChange(toggleExtracurriculars, displayExtracurriculars); handleChange(e, 'displayExtracurriculars', displayExtracurriculars)}}
           />
           Display Extracurriculars
+        </label>
+
+        <h5 className="offcanvas-title offcanvas-sub-title" id="offcanvasRightLabel">Additional Information</h5>
+        <label>
+          <input
+            className='check-box'
+            type="checkbox"
+            checked={displayHobbies}
+            onChange={(e) => {handleCheckboxChange(toggleHobbies, displayHobbies); handleChange(e, 'displayHobbies', displayHobbies)}}
+          />
+          Display Hobbies
+        </label>
+        <label>
+          <input
+            className='check-box'
+            type="checkbox"
+            checked={displayLanguages}
+            onChange={(e) => {handleCheckboxChange(toggleLanguages, displayLanguages); handleChange(e, 'displayLanguages', displayLanguages)}}
+          />
+          Display Languages
         </label>
         <button className="clear-button" onClick={handleClearForm}>Clear Form</button>
       </div>

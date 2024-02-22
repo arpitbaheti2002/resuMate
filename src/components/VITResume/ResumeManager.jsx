@@ -19,6 +19,8 @@ function ResumeManager() {
   const [displayAchievements, toggleAchievements] = useState(true);
   const [displayResponsibilities, toggleResponsibilities] = useState(true);
   const [displayExtracurriculars, toggleExtracurriculars] = useState(true);
+  const [displayHobbies, toggleHobbies] = useState(true);
+  const [displayLanguages, toggleLanguages] = useState(true);
 
   useEffect(() => {
     const storedResume = localStorage.getItem('vitresume');
@@ -33,6 +35,8 @@ function ResumeManager() {
       toggleAchievements(resumeData.displayAchievements === undefined ? true : resumeData.displayAchievements)
       toggleResponsibilities(resumeData.displayResponsibilities === undefined ? true : resumeData.displayResponsibilities)
       toggleExtracurriculars(resumeData.displayExtracurriculars === undefined ? true : resumeData.displayExtracurriculars)
+      toggleHobbies(resumeData.displayHobbies === undefined ? true : resumeData.displayHobbies)
+      toggleLanguages(resumeData.displayLanguages === undefined ? true : resumeData.displayLanguages)
   
       document.querySelector('#certifications').innerHTML = resumeData.certifications;
     }
@@ -77,7 +81,9 @@ function ResumeManager() {
           displayAchievements={displayAchievements}
           displayResponsibilities={displayResponsibilities}
           displayExtracurriculars={displayExtracurriculars}
-          />
+          displayHobbies={displayHobbies}
+          displayLanguages={displayLanguages}
+        />
         <button className="resume-control-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <IconContext.Provider value={{color: "#005BA2", size: "5vh"}}>
             <IoMdSettings />
@@ -93,6 +99,8 @@ function ResumeManager() {
           displayAchievements={displayAchievements} toggleAchievements={toggleAchievements}
           displayResponsibilities={displayResponsibilities} toggleResponsibilities={toggleResponsibilities}
           displayExtracurriculars={displayExtracurriculars} toggleExtracurriculars={toggleExtracurriculars}
+          displayHobbies={displayHobbies} toggleHobbies={toggleHobbies}
+          displayLanguages={displayLanguages} toggleLanguages={toggleLanguages}
         />
         <button className="feedback-btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <IconContext.Provider value={{color: "#005BA2", size: "5vh"}}>

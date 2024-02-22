@@ -3,6 +3,11 @@
   color: #005BA2;
 }
 
+.offcanvas-sub-title {
+  font-size: 3vh;
+  margin-bottom: 10px;
+}
+
 .offcanvas-content {
   padding: 10px 20px;
 }

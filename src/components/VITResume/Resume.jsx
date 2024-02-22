@@ -18,7 +18,7 @@ function Resume(props) {
       <Cocurriculars rowsCocurriculars={props.rowsCocurriculars} />
       <Achievements displayAchievements={props.displayAchievements} displayResponsibilities={props.displayResponsibilities}
                     displayExtracurriculars={props.displayExtracurriculars}/>
-      <AdditionalInfo />
+      <AdditionalInfo displayHobbies={props.displayHobbies} displayLanguages={props.displayLanguages}/>
     </div>
   )
 }
