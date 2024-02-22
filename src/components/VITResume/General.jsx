@@ -7,6 +7,7 @@ function General(props) {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [portfolio_site, setPortfolioSite] = useState('');
+  const [portfolio_site_link, setPortfolioSiteLink] = useState('');
   const [linkedin, setLinkedin] = useState('');
   const [linkedinDisplay, setLinkedinDisplay] = useState('');
   const [gitHub, setGitHub] = useState('');
@@ -23,6 +24,7 @@ function General(props) {
       setEmail(resumeData.email || '')
       setPhone(resumeData.phone || '')
       setPortfolioSite(resumeData.portfolio || '')
+      setPortfolioSiteLink(resumeData.portfolioLink || '')
       setLinkedin(resumeData.linkedin || '')
       setLinkedinDisplay(resumeData.linkedinDisplay || '')
       setGitHub(resumeData.github || '')
@@ -49,6 +51,8 @@ function General(props) {
       resumeData.email = e.target.value;
     } else if (item === "phone") {
       resumeData.phone= e.target.value;
+    } else if (item === "portfolioLink") {
+      resumeData.portfolioLink= e.target.value;
     } else if (item === "portfolio") {
       resumeData.portfolio= e.target.value;
     } else if (item === "linkedin") {
@@ -124,7 +128,7 @@ function General(props) {
           :null
         }
         {(portfolio_site.length) > 0 ? 
-          <p><a href={portfolio_site}>{portfolio_site}</a></p>
+          <p><a href={portfolio_site_link}>{portfolio_site}</a></p>
           :null
         }
         <p><a href={linkedin}>{linkedinDisplay}</a></p>
@@ -159,7 +163,13 @@ function General(props) {
           <input
             value={portfolio_site}
             onChange={(e) => {setPortfolioSite(e.target.value); handleChange(e, 'portfolio')}}
-            placeholder='Portfolio site (optional)'
+            placeholder='Portfolio site Display (optional)'
+          />
+          <br />
+          <input
+            value={portfolio_site_link}
+            onChange={(e) => {setPortfolioSiteLink(e.target.value); handleChange(e, 'portfolioLink')}}
+            placeholder='Portfolio site Link (optional)'
           />
           <br />
           <input
