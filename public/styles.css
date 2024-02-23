@@ -59,21 +59,30 @@ body{
     height: 29.7cm;
     width: 21cm;
     overflow: hidden;
+    position: relative;
+  }
+  
+  html {
+    background-color: white;
   }
 
-  html{
-    height: 29.7cm;
-    width: 21cm;
-    overflow: hidden;
+  .resume-container {
+    position: absolute;
+    top: calc(20px);
+    left: 0;
   }
 
   .a4-page {
     visibility: visible;
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
     padding: 0;
     margin: 0;
+  }
+
+  .warning-line {
+    display: none;
   }
 
   .info-editor{

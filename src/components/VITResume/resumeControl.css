@@ -1,3 +1,7 @@
+.offcanvas {
+  overflow-y: scroll;
+}
+
 .offcanvas-title {
   font-size: 5vh;
   color: #005BA2;

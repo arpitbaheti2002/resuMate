@@ -1,6 +1,6 @@
 .resume-container{
   display: flex;
-  height: calc(29.7cm + 15vh);
+  /* height: calc(29.7cm + 15vh); */
   justify-content: center;
   align-items: center;
   font-family: 'Open Sans', sans-serif;
@@ -12,8 +12,30 @@ label{
 
 .a4-page{
   width: 21cm;
-  height: 29.7cm;
+  min-height: 29.7cm;
   background-color: #fff;
+  position: relative;
+}
+
+.warning-line {
+  position: absolute;
+  top: calc(29.7cm - 20px);
+  z-index: 1;
+  margin: 0;
+  width: 100%;
+  border: 0;
+  border-top: 3px dotted red;
+}
+
+.warning-message {
+  position: absolute;
+  width: 100px;
+  text-align: right;
+  top: calc(29.7cm - 13px);
+  z-index: 1;
+  margin: 0;
+  left: -110px;
+  color: red;
 }
 
 .resume-print{
