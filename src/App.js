@@ -9,15 +9,15 @@ function App() {
   
   return (
     <div className="App">
-      {window.innerWidth>700? 
+      {/* {window.innerWidth>700?  */}
       <BrowserRouter>
       <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/VITResume" element={<ResumeManager />} />
         </Routes>
       </BrowserRouter>
-      :<MobilePage />
-    }
+       {/* :<MobilePage /> */}
+    {/* } */}
     </div> 
     
   );

@@ -1,6 +1,5 @@
 .resume-container{
   display: flex;
-  /* height: calc(29.7cm + 15vh); */
   justify-content: center;
   align-items: center;
   font-family: 'Open Sans', sans-serif;
@@ -319,3 +318,20 @@ label{
   display: list-item;
 }
 
+@media (max-width: 620px) {
+  .resume-container {
+    display: block;
+    padding-left: 30px;
+    padding-top: 30px;
+  }
+
+  .resume-print li{
+    font-size: 2vh;
+  }
+  
+  .resume-print {
+    padding-top: 30px;
+    width: 21.5cm;
+  }
+  
+}

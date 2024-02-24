@@ -119,7 +119,7 @@
     word-wrap: break-word;
   }
  
-  @media (max-width: 600px) {
+  /* @media (min-width: 620px) {
     .homepage {
         width: auto;
         display: flex;
@@ -156,6 +156,73 @@
     
     .subtitle {
       font-size: 6.3vw;
+      line-height: 7vw;
+      
+    }
+  
+    .feature-section {
+      gap: 3vw;
+    }
+  
+    .feature-box {
+      width: fit-content;
+      padding: 4vw;
+      border-radius: 4vw;
+      border: 0.4vw #005BA2 solid;
+      gap: 2vw;
+    }
+  
+    .feature-title {
+      font-size: 6vw;
+      line-height: 7vw;
+    }
+  
+    .designer-info {
+      text-align:left ;
+      max-width: 30vw;  
+      font-size: 4vw;
+      line-height: 6vw;
+      word-wrap: break-word;
+    }
+  } */
+
+  @media (max-width: 620px) {
+    .homepage {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: url('Thumbnail Light.png') center/cover no-repeat;
+        position: fixed;
+        height: 100vh;
+        z-index: -1;
+    }
+
+    .content-container {
+        padding-left: 5vw;
+        padding-top: 0px;
+        padding-bottom: 20vh;
+        align-self:self-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 35px;
+        display: flex;
+    }
+    
+    .blue-text {
+        font-size: 12vw;
+        line-height: 14vw;
+      }
+      
+      .black-text {
+        font-size: 12vw;
+        line-height: 14vw;
+    }
+    
+    .subtitle {
+      font-size: 4.5vw;
       line-height: 7vw;
       
     }
