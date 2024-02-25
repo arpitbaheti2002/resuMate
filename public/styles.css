@@ -68,7 +68,7 @@ body{
 
   .resume-container {
     position: absolute;
-    top: calc(20px);
+    top: calc(0px);
     left: 0;
   }
 
