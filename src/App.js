@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import ResumeManager from "./components/VITResume/ResumeManager";
+import VITResumeManager from "./components/VITResume/ResumeManager";
+import MAANGResumeManager from "./components/MAANG/ResumeManager";
 import './App.css';
-import MobilePage from "./components/MobilePage/MobilePage";
 
 function App() {
   
@@ -13,7 +13,8 @@ function App() {
       <BrowserRouter>
       <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/VITResume" element={<ResumeManager />} />
+          <Route path="/VITResume" element={<VITResumeManager />} />
+          <Route path="/MAANGFormat" element={<MAANGResumeManager/>} />
         </Routes>
       </BrowserRouter>
        {/* :<MobilePage /> */}

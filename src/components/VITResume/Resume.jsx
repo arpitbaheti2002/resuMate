@@ -21,8 +21,6 @@ function Resume(props) {
     return () => clearInterval(intervalId);
   }, []);
 
-  const warningLineClass = isWarning ? 'warning-line' : '';
-
   return (
     <div id="vit-resume" className={`resume a4-page`}>
       {isWarning?
