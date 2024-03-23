@@ -44,8 +44,7 @@ function Homepage(props) {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }} 
         transition={{ duration: 0.5, type: "Inertia" }}
-        className='homepage'
-    >       
+        className='homepage'> 
         <div className='content-container'>
             <div className='title-section'>
             <div className='home-page-title'>

@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import Resume from './Resume';
 import ResumeControls from './ResumeControls';
 import Feedback from '../Feedback/Feedback';
+import './maang-resume.css';
 
 import { IconContext } from 'react-icons';
 import { IoMdSettings } from "react-icons/io";

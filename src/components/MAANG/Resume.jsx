@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import General from './General';
 
 
 function Resume(props) {
@@ -23,6 +24,7 @@ function Resume(props) {
         <p className='warning-message'>Single page</p>
       </>
       :<></>}
+      <General displayPhone={props.displayPhone}/>
       
     </div>
   )
