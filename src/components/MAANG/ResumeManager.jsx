@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from '../Header/Header';
 import Resume from './Resume';
 import ResumeControls from './ResumeControls';
@@ -11,6 +11,9 @@ import { FaPrint } from "react-icons/fa6";
 import { MdMessage } from "react-icons/md";
 
 function ResumeManager() {
+  const [displayPhone, togglePhone] = useState(true);
+  const [rowsEducation, changeRowsEducation] = useState(3);
+
   const handlePrint = () => {
     document.body.style.zoom = "100%";
     window.print();
@@ -20,7 +23,10 @@ function ResumeManager() {
     <div>
       <Header name="MAANG Format"/>
       <div className='resume-container'>
-        <Resume />
+        <Resume 
+          displayPhone={displayPhone}
+          rowsEducation={rowsEducation}
+        />
         <button className="resume-control-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <IconContext.Provider value={{color: "#005BA2", size: "5vh"}}>
             <IoMdSettings />

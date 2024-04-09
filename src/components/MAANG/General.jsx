@@ -79,26 +79,19 @@ function General(props) {
       className="maang-general"
       style={{ display: "flex", flexDirection: "column" }}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-        }}
-      >
-        <h1 style={{ color: "blue" }}>
-          <input
-            className="maang-name"
-            value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-              handleChange(e, "name");
-            }}
-            placeholder="Full Name"
-          />
-        </h1>
+      <div>
+        <input
+          className="maang-name"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+            handleChange(e, "name");
+          }}
+          placeholder="Full Name"
+        />
       </div>
-      <hr style={{ borderTop: "2.5px solid black",margin:'10px 0' }} />
+
+      <hr className="horizontal-rule" />
       <div
         style={{
           display: "flex",
@@ -108,9 +101,9 @@ function General(props) {
       >
         <div className="info-container" onClick={handleClick}>
           <p>
-            {city? city:'City, Country'} | {phone ? phone : 'Phone Number'} |<a href={`mailto:${email}`}>{email? email: 'Email address'}</a> |
-            <a href={linkedin}>{linkedinDisplay? linkedinDisplay:'Linkedin Profile'}</a> |
-            <a href={gitHub}>{gitHubDisplay? gitHubDisplay: 'Github Profile'}</a>
+            {city? city:'City, Country'} | {phone ? phone : 'Phone Number'} | <a href={`mailto:${email}`}>{email? email: 'Email address'} </a> 
+            | <a href={linkedin}>{linkedinDisplay? linkedinDisplay:'Linkedin Profile'} </a> 
+            | <a href={gitHub}>{gitHubDisplay? gitHubDisplay: 'Github Profile'}</a>
             {portfolio_site.length > 0 ? (
               <a href={portfolio_site_link}> | {portfolio_site}</a>
             ) : null}

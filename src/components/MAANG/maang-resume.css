@@ -95,12 +95,25 @@
     border: 0;
     outline: 0;
   }
+
+  /* Comon */
+  .horizontal-rule {
+    height: 0;
+    margin: 5px 0px;
+    width: 100%;
+    border-top: 1px solid black;
+    opacity: 0.6;
+  }
+
+  .italics {
+    font-style: italic;
+  }
   
   /* General Section */
   
   .maang-general{
     position: relative;
-    padding: 20px 30px 10px 30px;
+    padding: 20px 30px 15px 30px;
     display: flex;
     justify-content: space-between;
   }
@@ -108,8 +121,8 @@
   
   .maang-name {
     font-size: 20pt;
-    height: 30pt;
-    width: 18cm;
+    height: 20pt;
+    width: 100%;
     text-align: center;
     font-weight: bolder;
     border: none;
@@ -120,6 +133,14 @@
     position: relative;
     font-size: 12pt;
     text-align: center;
+  }
+
+  .maang-general .horizontal-rule {
+    margin: 7px 0px;
+    height: 0;
+    width: 100%;
+    border-top: 2.3px solid black;
+    opacity: 0.6;
   }
 
   .maang-general .info-container a{
@@ -138,5 +159,31 @@
     margin: 0.5px 0px;
   }
 
+  /* Education   */
+
+#maang-resume {
+  font-family: "PT Serif", serif;
+}
   
-  
+.maang-education {
+  position: relative;
+  padding: 0px 30px;
+}
+
+.maang-education h2 {
+  font-size: 13pt;
+  margin: 0;
+  font-weight: 600;
+  color: #20349f;
+}
+
+.maang-education .education-unit{
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.maang-education input{
+  border: 0;
+  margin: 0;
+  font-size: 11pt;
+}
