@@ -98,6 +98,15 @@ body{
     outline: none;
   }
 
+  /* MAANG FORMAT */
+  .add-skills input{
+    display: none;
+  }
+
+  .add-skills button{
+    display: none;
+  }
+
   @page {
     margin: 0;
   }

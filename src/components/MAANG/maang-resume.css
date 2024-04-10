@@ -108,6 +108,13 @@
   .italics {
     font-style: italic;
   }
+
+  #maang-resume .section-heading {
+    font-size: 13pt;
+    margin: 0;
+    font-weight: 600;
+    color: #20349f;
+  }
   
   /* General Section */
   
@@ -167,14 +174,7 @@
   
 .maang-education {
   position: relative;
-  padding: 0px 30px;
-}
-
-.maang-education h2 {
-  font-size: 13pt;
-  margin: 0;
-  font-weight: 600;
-  color: #20349f;
+  padding: 0px 30px 10px;
 }
 
 .maang-education .education-unit{
@@ -186,4 +186,52 @@
   border: 0;
   margin: 0;
   font-size: 11pt;
+}
+
+/* Skills */
+.maang-skills {
+  padding: 0px 30px 10px;
+  position: relative;
+}
+
+.maang-skills .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.maang-skills .skill-item {
+  width: 6.47cm;
+}
+
+.maang-skills .skill-item .delete-btn {
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity ease 0.2s;
+}
+
+.maang-skills .skill-item:hover .delete-btn {
+  opacity: 1;
+  transition: opacity ease 0.2s;
+}
+
+.maang-skills .add-skills {
+  position: absolute;
+  display: flex;
+  right: -6.5cm;
+  bottom: 0px;
+}
+
+.maang-skills .add-skills input{
+  width: 4.8cm;
+  margin-right: 0.2cm;
+}
+
+.maang-skills .add-skills button{
+  width: 1cm;
+  height: 0.8cm;
+  padding: 0;
+  border: none;
+  font-size: 16pt;
+  background-color: green;
+  color: white;
 }

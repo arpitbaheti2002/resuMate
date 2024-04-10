@@ -56,7 +56,7 @@ function Education(props) {
 
   return (
     <div className='maang-education'>
-      <h2>EDUCATION</h2>    
+      <h2 className='section-heading'>EDUCATION</h2>    
       <hr className='horizontal-rule'/>  
 
       <table>
