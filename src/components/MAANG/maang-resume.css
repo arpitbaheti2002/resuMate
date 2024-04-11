@@ -168,7 +168,7 @@
 
   /* Education   */
 
-#maang-resume {
+ #maang-resume {
   font-family: "PT Serif", serif;
 }
   
@@ -235,3 +235,30 @@
   background-color: green;
   color: white;
 }
+
+  /* Experience */
+
+  .maang-experience {
+    position: relative;
+    padding: 0px 30px 10px;
+  }
+  
+  .maang-experience .experience-unit{
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  
+  .maang-experience input{
+    border: 0;
+    margin: 0;
+    font-size: 11pt;
+    width:auto;
+  }
+
+  .maang-experience .info-experience ul{
+    text-align: left;
+    list-style-type: square;
+    margin-bottom: 0;
+    padding-left: 25px;
+    
+  }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import General from './General';
 import Education from './Education';
 import Skills from './Skills';
+import Experience from './Experience';
 import './maang-resume.css';
 
 
@@ -30,6 +31,7 @@ function Resume(props) {
       <General displayPhone={props.displayPhone}/>
       <Education rowsEducation={props.rowsEducation}/>
       <Skills />
+      <Experience rowsExperience={props.rowsExperience}/>
     </div>
   )
 }
