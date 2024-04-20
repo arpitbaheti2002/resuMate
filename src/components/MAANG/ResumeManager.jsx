@@ -12,7 +12,8 @@ import { MdMessage } from "react-icons/md";
 
 function ResumeManager() {
   const [displayPhone, togglePhone] = useState(true);
-  const [rowsEducation, changeRowsEducation] = useState(3);
+  const [rowsEducation, changeRowsEducation] = useState(2);
+  const [rowsExperience, changeRowsExperience] = useState(2);
 
   const handlePrint = () => {
     document.body.style.zoom = "100%";
@@ -26,6 +27,7 @@ function ResumeManager() {
         <Resume 
           displayPhone={displayPhone}
           rowsEducation={rowsEducation}
+          rowsExperience={rowsExperience}
         />
         <button className="resume-control-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <IconContext.Provider value={{color: "#005BA2", size: "5vh"}}>

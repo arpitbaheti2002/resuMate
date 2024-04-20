@@ -246,6 +246,7 @@
   .maang-experience .experience-unit{
     margin: 0;
     margin-bottom: 5px;
+    width: auto;
   }
   
   .maang-experience input{
@@ -256,9 +257,21 @@
   }
 
   .maang-experience .info-experience ul{
+    width: 18.75cm;
     text-align: left;
     list-style-type: square;
     margin-bottom: 0;
     padding-left: 25px;
     
   }
+  
+  #experience-description {
+    display: list-item;
+    width: 18.75cm;
+    margin-left: 25px;
+    text-align: left;
+  }
+
+  /* #info-experience div{
+    display: list-item;
+  } */
