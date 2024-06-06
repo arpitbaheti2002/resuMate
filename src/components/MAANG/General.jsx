@@ -101,7 +101,7 @@ function General(props) {
       >
         <div className="info-container" onClick={handleClick}>
           <p>
-            {city? city:'City, Country'} | {phone ? phone : 'Phone Number'} | <a href={`mailto:${email}`}>{email? email: 'Email address'} </a> 
+            {city? city:'City, Country'} | {(props.displayPhone) ? (phone) ? phone : 'Phone Number' + ' | ' : null}<a href={`mailto:${email}`}>{email? email: 'Email address'} </a> 
             | <a href={linkedin}>{linkedinDisplay? linkedinDisplay:'Linkedin Profile'} </a> 
             | <a href={gitHub}>{gitHubDisplay? gitHubDisplay: 'Github Profile'}</a>
             {portfolio_site.length > 0 ? (

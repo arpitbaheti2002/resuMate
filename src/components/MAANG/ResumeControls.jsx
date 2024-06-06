@@ -1,7 +1,9 @@
 import React from 'react';
 import './resumeControl.css';
 
-function ResumeControls() {
+function ResumeControls( {
+    displayPhone, togglePhone, rowsEducation, changeRowsEducation, rowsSkills, changeRowsSkills
+  }) {
 
   const handleCheckboxChange = (func, val) => {
     func(!val);
@@ -15,9 +17,13 @@ function ResumeControls() {
       resumeData = JSON.parse(storedResume);
     }
 
-    // if (item === "displayPhone") {
-    //   resumeData.displayPhone = !val;
-    // }
+    if (item === "displayPhone") {
+      resumeData.displayPhone = !val;
+    } else if (item === "rowsEducation") {
+      resumeData.rowsEducation = val;
+    } else if (item === "rowsSkills") {
+      resumeData.rowsSkills = val;
+    }
       
     localStorage.setItem('maangresume', JSON.stringify(resumeData));
   }
@@ -34,7 +40,7 @@ function ResumeControls() {
         <button type="button" className="btn-close" data-bs-dismiss="offcanvas"></button>
       </div>
       <div className='offcanvas-content'>
-        {/* <label>
+        <label>
           <input
             className='check-box'
             type="checkbox"
@@ -42,8 +48,8 @@ function ResumeControls() {
             onChange={(e) => {handleCheckboxChange(togglePhone, displayPhone); handleChange(e, 'displayPhone', displayPhone)}}
           />
           Display Phone Number
-        </label> */}
-        {/* <label>
+        </label>
+        <label>
           <input
             type="number"
             className="number-input"
@@ -51,8 +57,18 @@ function ResumeControls() {
             onChange={(e) => {changeRowsEducation(e.target.value); handleChange(e, 'rowsEducation', e.target.value)}}
           />
           Number of Rows in Education
-        </label> */}
-        
+        </label>
+        <label>
+          <input
+            type="number"
+            className="number-input"
+            value={rowsSkills}
+            onChange={(e) => {changeRowsSkills(e.target.value); handleChange(e, 'rowsSkills', e.target.value)}}
+          />
+          Number of Rows in Skills
+        </label>
+
+
         <button className="clear-button" onClick={handleClearForm}>Clear Form</button>
       </div>
     </div>

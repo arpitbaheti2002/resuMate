@@ -125,9 +125,8 @@
     justify-content: space-between;
   }
   
-  
   .maang-name {
-    font-size: 20pt;
+    font-size: 19pt;
     height: 20pt;
     width: 100%;
     text-align: center;
@@ -168,73 +167,36 @@
 
   /* Education   */
 
- #maang-resume {
-  font-family: "PT Serif", serif;
-}
+  #maang-resume {
+    font-family: "PT Serif", serif;
+  }
   
-.maang-education {
-  position: relative;
-  padding: 0px 30px 10px;
-}
+  .maang-education {
+    position: relative;
+    padding: 0px 30px 10px;
+  }
 
-.maang-education .education-unit{
-  margin: 0;
-  margin-bottom: 5px;
-}
+  .maang-education .education-unit{
+    margin: 0;
+    margin-bottom: 2pt;
+  }
 
-.maang-education input{
-  border: 0;
-  margin: 0;
-  font-size: 11pt;
-}
+  .maang-education .education-unit td{
+    height: 12pt;
+  }
 
-/* Skills */
-.maang-skills {
-  padding: 0px 30px 10px;
-  position: relative;
-}
+  .maang-education input{
+    border: 0;
+    margin: 0;
+    font-size: 11pt;
+  }
 
-.maang-skills .skills-container {
-  display: flex;
-  flex-wrap: wrap;
-}
+  /* Skills */
+  .maang-skills {
+    padding: 0px 30px 10px;
+    position: relative;
+  }
 
-.maang-skills .skill-item {
-  width: 6.47cm;
-}
-
-.maang-skills .skill-item .delete-btn {
-  opacity: 0;
-  cursor: pointer;
-  transition: opacity ease 0.2s;
-}
-
-.maang-skills .skill-item:hover .delete-btn {
-  opacity: 1;
-  transition: opacity ease 0.2s;
-}
-
-.maang-skills .add-skills {
-  position: absolute;
-  display: flex;
-  right: -6.5cm;
-  bottom: 0px;
-}
-
-.maang-skills .add-skills input{
-  width: 4.8cm;
-  margin-right: 0.2cm;
-}
-
-.maang-skills .add-skills button{
-  width: 1cm;
-  height: 0.8cm;
-  padding: 0;
-  border: none;
-  font-size: 16pt;
-  background-color: green;
-  color: white;
-}
 
   /* Experience */
 

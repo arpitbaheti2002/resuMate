@@ -19,7 +19,7 @@ function Education(props) {
             return prevEducationData[index];
           } else {
             return {
-              board: '',
+              degree: '',
               tenure: '',
               institution: '',
               cgpa: ''
@@ -63,12 +63,12 @@ function Education(props) {
         {Array.from({ length: props.rowsEducation }, (_, index) => (
           <div key={index} className='education-unit'>
             <tr>
-              <td><input style={{width:'13cm', fontWeight:'600'}} placeHolder="Degree & Field of Study" value={educationData[index].degree} onChange={(e) => handleChangeEducation(e, index, 'degree')}></input></td>
-              <td><input style={{width:'6.4cm', textAlign:'right'}} placeHolder="Month Year - Month Year" value={educationData[index].tenure} onChange={(e) => handleChangeEducation(e, index, 'tenure')}></input></td>
+              <td><input style={{width:'13cm', fontWeight:'600'}} placeHolder="Degree & Field of Study" value={educationData[index]?educationData[index].degree:''} onChange={(e) => handleChangeEducation(e, index, 'degree')}></input></td>
+              <td><input style={{width:'6.4cm', textAlign:'right'}} placeHolder="Month Year - Month Year" value={educationData[index]?educationData[index].tenure:''} onChange={(e) => handleChangeEducation(e, index, 'tenure')}></input></td>
             </tr>
             <tr>
-              <td><input className='italics' style={{width:'13cm'}} placeHolder="InstitutionName, City/Country/Remote" value={educationData[index].institution} onChange={(e) => handleChangeEducation(e, index, 'institution')}></input></td>
-              <td><input className='italics' style={{width:'6.4cm', textAlign:'right'}} placeHolder="Percentage / CGPA" value={educationData[index].cgpa} onChange={(e) => handleChangeEducation(e, index, 'cgpa')}></input></td>
+              <td><input className='italics' style={{width:'13cm'}} placeHolder="InstitutionName, City/Country/Remote" value={educationData[index]?educationData[index].institution:''} onChange={(e) => handleChangeEducation(e, index, 'institution')}></input></td>
+              <td><input className='italics' style={{width:'6.4cm', textAlign:'right'}} placeHolder="Percentage / CGPA" value={educationData[index]?educationData[index].cgpa:''} onChange={(e) => handleChangeEducation(e, index, 'cgpa')}></input></td>
             </tr>
           </div>
         ))}

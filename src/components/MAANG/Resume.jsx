@@ -30,8 +30,8 @@ function Resume(props) {
       :<></>}
       <General displayPhone={props.displayPhone}/>
       <Education rowsEducation={props.rowsEducation}/>
-      <Skills />
-      <Experience rowsExperience={props.rowsExperience}/>
+      <Skills rowsSkills={props.rowsSkills}/>
+      {/* <Experience rowsExperience={props.rowsExperience}/> */}
     </div>
   )
 }
