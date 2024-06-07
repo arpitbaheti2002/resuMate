@@ -41,7 +41,7 @@ function Education(props) {
 
   function handleChangeEducation(e, index, field)  {
     const updatedEducationData = [...educationData];
-    console.log(updatedEducationData)
+
     updatedEducationData[index][field] = e.target.value;
     setEducationData(updatedEducationData);
     

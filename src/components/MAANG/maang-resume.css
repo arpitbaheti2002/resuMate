@@ -178,25 +178,33 @@
 
   .maang-education .education-unit{
     margin: 0;
-    margin-bottom: 2pt;
   }
-
-  .maang-education .education-unit td{
-    height: 12pt;
-  }
-
+ 
   .maang-education input{
     border: 0;
     margin: 0;
     font-size: 11pt;
+    height: 12pt;
   }
 
   /* Skills */
   .maang-skills {
     padding: 0px 30px 10px;
     position: relative;
+    font-size: 11pt;
   }
 
+  .maang-skills p {
+    display: inline;
+  }
+
+  .maang-skills .skillsHead {
+    font-weight: 600;
+  }
+
+  .maang-skills .skills {
+    padding-left: 5pt;
+  }
 
   /* Experience */
 
