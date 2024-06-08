@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Education(props) {
   const [educationData, setEducationData] = useState(() => {
@@ -29,7 +29,7 @@ function Education(props) {
         return newEducationData;
       });
     }
-  }, [props.rowsEducation, educationData.length]);
+  }, [props.rowsEducation]);
 
   useEffect(() => {
     const storedResume = localStorage.getItem('maangresume');
@@ -39,42 +39,74 @@ function Education(props) {
     }
   }, []);
 
-  function handleChangeEducation(e, index, field)  {
+  function handleChangeEducation(e, index, field) {
     const updatedEducationData = [...educationData];
-
     updatedEducationData[index][field] = e.target.value;
     setEducationData(updatedEducationData);
     
     const storedResume = JSON.parse(localStorage.getItem('maangresume')) || {};
-
     const updatedResumeData = {
       ...storedResume,
       educationData: updatedEducationData
     };
     localStorage.setItem('maangresume', JSON.stringify(updatedResumeData));
-  };
+  }
 
   return (
-    <div className='maang-education'>
-      <h2 className='section-heading'>EDUCATION</h2>    
-      <hr className='horizontal-rule'/>  
+    props.rowsEducation > 0 && (
+      <div className='maang-education'>
+        <h2 className='section-heading'>EDUCATION</h2>
+        <hr className='horizontal-rule' />
 
-      <table>
-        {Array.from({ length: props.rowsEducation }, (_, index) => (
-          <div key={index} className='education-unit'>
-            <tr>
-              <td><input style={{width:'13cm', fontWeight:'600'}} placeHolder="Degree & Field of Study" value={educationData[index]?educationData[index].degree:''} onChange={(e) => handleChangeEducation(e, index, 'degree')}></input></td>
-              <td><input style={{width:'6.4cm', textAlign:'right'}} placeHolder="Month Year - Month Year" value={educationData[index]?educationData[index].tenure:''} onChange={(e) => handleChangeEducation(e, index, 'tenure')}></input></td>
-            </tr>
-            <tr>
-              <td><input className='italics' style={{width:'13cm'}} placeHolder="InstitutionName, City/Country/Remote" value={educationData[index]?educationData[index].institution:''} onChange={(e) => handleChangeEducation(e, index, 'institution')}></input></td>
-              <td><input className='italics' style={{width:'6.4cm', textAlign:'right'}} placeHolder="Percentage / CGPA" value={educationData[index]?educationData[index].cgpa:''} onChange={(e) => handleChangeEducation(e, index, 'cgpa')}></input></td>
-            </tr>
-          </div>
-        ))}
-      </table>
-    </div>
-  )
+        <table>
+          <tbody>
+            {educationData.map((edu, index) => (
+              <React.Fragment key={index}>
+                <tr>
+                  <td>
+                    <input
+                      style={{ width: '13cm', fontWeight: '600' }}
+                      placeholder="Degree & Field of Study"
+                      value={edu.degree}
+                      onChange={(e) => handleChangeEducation(e, index, 'degree')}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      style={{ width: '6.4cm', textAlign: 'right' }}
+                      placeholder="Month Year - Month Year"
+                      value={edu.tenure}
+                      onChange={(e) => handleChangeEducation(e, index, 'tenure')}
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      className='italics'
+                      style={{ width: '13cm' }}
+                      placeholder="InstitutionName, City/Country/Remote"
+                      value={edu.institution}
+                      onChange={(e) => handleChangeEducation(e, index, 'institution')}
+                    />
+                  </td>
+                  <td>
+                    <input
+                      className='italics'
+                      style={{ width: '6.4cm', textAlign: 'right' }}
+                      placeholder="Percentage / CGPA"
+                      value={edu.cgpa}
+                      onChange={(e) => handleChangeEducation(e, index, 'cgpa')}
+                    />
+                  </td>
+                </tr>
+              </React.Fragment>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )
+  );
 }
 
 export default Education;

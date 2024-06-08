@@ -14,6 +14,7 @@ function ResumeManager() {
   const [displayPhone, togglePhone] = useState(true);
   const [rowsEducation, changeRowsEducation] = useState(3);
   const [rowsSkills, changeRowsSkills] = useState(3);
+  const [rowsExperience, changeRowsExperience] = useState(2);
 
   useEffect(() => {
     const storedResume = localStorage.getItem('maangresume');
@@ -22,6 +23,7 @@ function ResumeManager() {
       togglePhone(resumeData.displayPhone === undefined ? true : resumeData.displayPhone);
       changeRowsEducation(resumeData.rowsEducation || 3);
       changeRowsSkills(resumeData.rowsSkills || 3);
+      changeRowsExperience(resumeData.rowsExperience || 2);
     }
   }, []);
 
@@ -38,6 +40,7 @@ function ResumeManager() {
           displayPhone={displayPhone}
           rowsEducation={rowsEducation}
           rowsSkills={rowsSkills}
+          rowsExperience={rowsExperience}
         />
         <button className="resume-control-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <IconContext.Provider value={{color: "#005BA2", size: "5vh"}}>
@@ -48,6 +51,7 @@ function ResumeManager() {
           displayPhone={displayPhone} togglePhone={togglePhone}
           rowsEducation={rowsEducation} changeRowsEducation={changeRowsEducation}
           rowsSkills={rowsSkills} changeRowsSkills={changeRowsSkills}
+          rowsExperience={rowsExperience} changeRowsExperience={changeRowsExperience}
         />
         <button className="feedback-btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <IconContext.Provider value={{color: "#005BA2", size: "5vh"}}>
@@ -73,4 +77,4 @@ function ResumeManager() {
   )
 }
 
-export default ResumeManager
+export default ResumeManager;
