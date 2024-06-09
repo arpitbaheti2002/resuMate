@@ -3,7 +3,7 @@ import './resumeControl.css';
 
 function ResumeControls( {
     displayPhone, togglePhone, rowsEducation, changeRowsEducation, rowsSkills, changeRowsSkills, rowsExperience, 
-    changeRowsExperience
+    changeRowsExperience, rowsProjects, changeRowsProjects
   }) {
 
   const handleCheckboxChange = (func, val) => {
@@ -26,6 +26,8 @@ function ResumeControls( {
       resumeData.rowsSkills = val;
     } else if (item === "rowsExperience") {
       resumeData.rowsExperience = val;
+    } else if (item === "rowsProjects") {
+      resumeData.rowsProjects = val;
     }
       
     localStorage.setItem('maangresume', JSON.stringify(resumeData));
@@ -78,6 +80,15 @@ function ResumeControls( {
             onChange={(e) => {changeRowsExperience(e.target.value); handleChange(e, 'rowsExperience', e.target.value)}}
           />
           Number of Rows in Experience
+        </label>
+        <label>
+          <input
+            type="number"
+            className="number-input"
+            value={rowsProjects}
+            onChange={(e) => {changeRowsProjects(e.target.value); handleChange(e, 'rowsProjects', e.target.value)}}
+          />
+          Number of Rows in Project
         </label>
 
 

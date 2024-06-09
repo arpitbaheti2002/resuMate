@@ -244,3 +244,23 @@
   /* #info-experience div{
     display: list-item;
   } */
+
+  /* Project */
+
+  .maang-project {
+    position: relative;
+    padding: 0px 30px 10px;
+  }
+  
+  .maang-project .project-unit{
+    margin: 0;
+    margin-bottom: 5px;
+    width: auto;
+  }
+  
+  .maang-project input{
+    border: 0;
+    margin: 0;
+    font-size: 11pt;
+    width:auto;
+  }

@@ -3,6 +3,7 @@ import General from './General';
 import Education from './Education';
 import Skills from './Skills';
 import Experience from './Experience';
+import Projects from './Projects';
 import './maang-resume.css';
 
 
@@ -32,6 +33,7 @@ function Resume(props) {
       <Education rowsEducation={props.rowsEducation}/>
       <Skills rowsSkills={props.rowsSkills}/>
       <Experience rowsExperience={props.rowsExperience}/>
+      <Projects rowsProjects={props.rowsProjects}/>
     </div>
   )
 }
