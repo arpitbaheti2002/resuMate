@@ -15,7 +15,9 @@ function ResumeManager() {
   const [rowsEducation, changeRowsEducation] = useState(3);
   const [rowsSkills, changeRowsSkills] = useState(3);
   const [rowsExperience, changeRowsExperience] = useState(2);
-  const [rowsProjects, changeRowsProjects] = useState(1);
+  const [rowsProjects, changeRowsProjects] = useState(2);
+  const [rowsCertifications, changeRowsCertifications] = useState(2);
+  const [rowsAchievements, changeRowsAchievements] = useState(2);
 
   useEffect(() => {
     const storedResume = localStorage.getItem('maangresume');
@@ -26,6 +28,8 @@ function ResumeManager() {
       changeRowsSkills(resumeData.rowsSkills || 3);
       changeRowsExperience(resumeData.rowsExperience || 2);
       changeRowsProjects(resumeData.rowsProjects || 1);
+      changeRowsCertifications(resumeData.rowsCertifications || 1);
+      changeRowsAchievements(resumeData.rowsAchievements || 1);
     }
   }, []);
 
@@ -33,6 +37,20 @@ function ResumeManager() {
     document.body.style.zoom = "100%";
     window.print();
   };
+
+  useState(() => {
+    const handleBeforeUnload = (event) => {
+      const message = "Leaving this page will discard your changes. Are you sure, you want to reload?";
+      event.returnValue = message; 
+      return message;
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
 
   return (
     <div>
@@ -44,6 +62,8 @@ function ResumeManager() {
           rowsSkills={rowsSkills}
           rowsExperience={rowsExperience}
           rowsProjects={rowsProjects}
+          rowsCertifications={rowsCertifications}
+          rowsAchievements={rowsAchievements}
         />
         <button className="resume-control-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
           <IconContext.Provider value={{color: "#005BA2", size: "5vh"}}>
@@ -56,6 +76,8 @@ function ResumeManager() {
           rowsSkills={rowsSkills} changeRowsSkills={changeRowsSkills}
           rowsExperience={rowsExperience} changeRowsExperience={changeRowsExperience}
           rowsProjects={rowsProjects} changeRowsProjects={changeRowsProjects}
+          rowsCertifications={rowsCertifications} changeRowsCertifications={changeRowsCertifications}
+          rowsAchievements={rowsAchievements} changeRowsAchievements={changeRowsAchievements}
         />
         <button className="feedback-btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <IconContext.Provider value={{color: "#005BA2", size: "5vh"}}>

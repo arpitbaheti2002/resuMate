@@ -3,7 +3,8 @@ import './resumeControl.css';
 
 function ResumeControls( {
     displayPhone, togglePhone, rowsEducation, changeRowsEducation, rowsSkills, changeRowsSkills, rowsExperience, 
-    changeRowsExperience, rowsProjects, changeRowsProjects
+    changeRowsExperience, rowsProjects, changeRowsProjects, rowsCertifications, changeRowsCertifications,
+    rowsAchievements, changeRowsAchievements
   }) {
 
   const handleCheckboxChange = (func, val) => {
@@ -28,6 +29,10 @@ function ResumeControls( {
       resumeData.rowsExperience = val;
     } else if (item === "rowsProjects") {
       resumeData.rowsProjects = val;
+    } else if (item === "rowsCertifications") {
+      resumeData.rowsCertifications = val;
+    } else if (item === "rowsAchievements") {
+      resumeData.rowsAchievements = val;
     }
       
     localStorage.setItem('maangresume', JSON.stringify(resumeData));
@@ -89,6 +94,24 @@ function ResumeControls( {
             onChange={(e) => {changeRowsProjects(e.target.value); handleChange(e, 'rowsProjects', e.target.value)}}
           />
           Number of Rows in Project
+        </label>
+        <label>
+          <input
+            type="number"
+            className="number-input"
+            value={rowsCertifications}
+            onChange={(e) => {changeRowsCertifications(e.target.value); handleChange(e, 'rowsCertifications', e.target.value)}}
+          />
+          Number of Rows in Certification
+        </label>
+        <label>
+          <input
+            type="number"
+            className="number-input"
+            value={rowsAchievements}
+            onChange={(e) => {changeRowsAchievements(e.target.value); handleChange(e, 'rowsAchievements', e.target.value)}}
+          />
+          Number of Rows in Achievement
         </label>
 
 

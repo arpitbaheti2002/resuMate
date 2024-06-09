@@ -264,3 +264,67 @@
     font-size: 11pt;
     width:auto;
   }
+
+  /* Certifications */
+
+  .maang-certification {
+    position: relative;
+    padding: 0px 30px 10px;
+  }
+  
+  .maang-certification .certification-unit{
+    margin: 0;
+    margin-bottom: 5px;
+    width: auto;
+  }
+  
+  .maang-certification input{
+    border: 0;
+    margin: 0;
+    font-size: 11pt;
+    width:auto;
+  }
+  
+  /* Certification variable length */
+  .dynamic-width-input {
+    font-weight: 600;
+  }
+  
+  .duration-input {
+    width: 6.4cm;
+    text-align: right;
+  }
+  
+  .hidden-span {
+    position: absolute;
+    visibility: hidden;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .fixed-right {
+    position: fixed;
+    right: 0;
+  }
+  
+  /* Achievements */
+
+  .maang-achievement {
+    position: relative;
+    padding: 0px 30px 10px;
+  }
+  
+  .maang-achievement .achievement-unit{
+    margin: 0;
+    margin-bottom: 5px;
+    width: auto;
+  }
+  
+  .maang-achievement input{
+    border: 0;
+    margin: 0;
+    font-size: 11pt;
+    width:auto;
+  }
+  
